@@ -1,0 +1,11 @@
+.home-product {
+  display: flex;
+
+  &-try {
+    width: 25%;
+  }
+
+  &-product {
+    width: 75%;
+  }
+}

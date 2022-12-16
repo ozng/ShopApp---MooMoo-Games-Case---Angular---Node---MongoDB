@@ -1,0 +1,30 @@
+<div class="product-list">
+  <ng-container *ngFor="let product of productList">
+    <div class="product-list-wrapper">
+      <div class="product-list-card">
+        <img
+          src="{{ product.imageURL }}"
+          alt="product picture"
+          class="product-list-card-image"
+        />
+        <p class="product-list-card-title">
+          {{ product.title }}
+        </p>
+        <p class="product-list-card-price">${{ product.price }}</p>
+        <p class="product-list-card-overview">
+          {{ product.overview }}
+        </p>
+        <div class="product-list-card-rate">
+          <p class="product-list-card-rate-rate">{{ product.rate }}</p>
+          <button class="product-list-card-rate-favorite">
+            <span
+              class="material-symbols-outlined product-list-card-rate-favorite-icon"
+            >
+              favorite </span
+            >Watch
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,30 +1,97 @@
 <div class="product-list">
-  <ng-container *ngFor="let product of productList">
-    <div class="product-list-wrapper">
-      <div class="product-list-card">
-        <img
-          src="{{ product.imageURL }}"
-          alt="product picture"
-          class="product-list-card-image"
-        />
-        <p class="product-list-card-title">
-          {{ product.title }}
+  <div class="product-list-topmenu">
+    <div class="product-list-topmenu-dropdown">
+      <div class="product-list-topmenu-dropdown-sort">
+        <p class="product-list-topmenu-dropdown-sort-title">SORT BY</p>
+        <p class="product-list-topmenu-dropdown-sort-selected">Useless first</p>
+        <span
+          class="material-symbols-outlined product-list-topmenu-dropdown-sort-icon"
+        >
+          arrow_drop_down
+        </span>
+      </div>
+
+      <div class="product-list-topmenu-dropdown-sort">
+        <p class="product-list-topmenu-dropdown-sort-passive">Condition</p>
+        <span
+          class="material-symbols-outlined product-list-topmenu-dropdown-sort-icon"
+        >
+          arrow_drop_down
+        </span>
+      </div>
+
+      <div class="product-list-topmenu-dropdown-sort">
+        <p class="product-list-topmenu-dropdown-sort-passive">
+          Delivery options
         </p>
-        <p class="product-list-card-price">${{ product.price }}</p>
-        <p class="product-list-card-overview">
-          {{ product.overview }}
-        </p>
-        <div class="product-list-card-rate">
-          <p class="product-list-card-rate-rate">{{ product.rate }}</p>
-          <button class="product-list-card-rate-favorite">
-            <span
-              class="material-symbols-outlined product-list-card-rate-favorite-icon"
-            >
-              favorite </span
-            >Watch
-          </button>
-        </div>
+        <span
+          class="material-symbols-outlined product-list-topmenu-dropdown-sort-icon"
+        >
+          arrow_drop_down
+        </span>
       </div>
     </div>
-  </ng-container>
+
+    <div class="product-list-topmenu-tabbar-margin">
+      <div class="product-list-topmenu-tabbar">
+        <span class="product-list-topmenu-tabbar-passive">Show all</span>
+        <span class="product-list-topmenu-tabbar-active">Auction</span>
+        <span class="product-list-topmenu-tabbar-passive">Buy now</span>
+      </div>
+
+      <div class="product-list-topmenu-tabbar">
+        <span
+          class="material-symbols-outlined product-list-topmenu-tabbar-passive"
+        >
+          view_list
+        </span>
+        <span
+          class="material-symbols-outlined product-list-topmenu-tabbar-active"
+        >
+          view_module
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-list-mid">
+    <p class="product-list-mid-title">Related</p>
+    <span class="product-list-mid-label">worldwide shipping</span>
+    <span class="product-list-mid-label">under $50</span>
+    <span class="product-list-mid-label">kitten</span>
+    <span class="product-list-mid-label">plastic plugs</span>
+    <span class="product-list-mid-label">pucker shoes</span>
+    <span class="product-list-mid-label">vintage typewriter</span>
+  </div>
+
+  <div class="product-list-list">
+    <ng-container *ngFor="let product of productList">
+      <div class="product-list-list-wrapper">
+        <div class="product-list-list-card">
+          <img
+            src="{{ product.imageURL }}"
+            alt="product picture"
+            class="product-list-list-card-image"
+          />
+          <p class="product-list-list-card-title">
+            {{ product.title }}
+          </p>
+          <p class="product-list-list-card-price">${{ product.price }}</p>
+          <p class="product-list-list-card-overview">
+            {{ product.overview }}
+          </p>
+          <div class="product-list-list-card-rate">
+            <p class="product-list-list-card-rate-rate">{{ product.rate }}</p>
+            <button class="product-list-list-card-rate-favorite">
+              <span
+                class="material-symbols-outlined product-list-list-card-rate-favorite-icon"
+              >
+                favorite </span
+              >Watch
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
 </div>

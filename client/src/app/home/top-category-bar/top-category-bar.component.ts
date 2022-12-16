@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
-
+interface Categories {
+  id: number;
+  icon: string;
+  label: string;
+}
 @Component({
   selector: 'app-top-category-bar',
   templateUrl: './top-category-bar.component.html',
   styleUrls: ['./top-category-bar.component.scss'],
 })
 export class TopCategoryBarComponent {
-  selectedCategoryID = 1;
+  selectedCategoryID: number = 1;
 
-  topCategories = [
+  topCategories: Categories[] = [
     {
       id: 1,
       icon: 'checkroom',
@@ -70,4 +74,8 @@ export class TopCategoryBarComponent {
       label: 'Vintage',
     },
   ];
+
+  selectCategory = (categoryID: number) => {
+    this.selectedCategoryID = categoryID;
+  };
 }

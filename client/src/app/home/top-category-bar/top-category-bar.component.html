@@ -5,6 +5,7 @@
         'top-category-bar-card-selected': category.id === selectedCategoryID
       }"
       class="top-category-bar-card"
+      (click)="selectCategory(category.id)"
     >
       <span class="material-symbols-outlined top-category-bar-card-icon">
         {{ category.icon }}

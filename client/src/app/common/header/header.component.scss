@@ -1,0 +1,128 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1.6rem;
+
+  font-family: "Inter";
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    gap: 3.3rem;
+    p {
+      font-size: 2rem;
+      color: #5a5b6a;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+
+  &-search {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    &-bar {
+      position: relative;
+
+      &-searchicon {
+        position: absolute;
+        font-size: 2rem;
+        top: 50%;
+        left: 2.3rem;
+        transform: translate(-50%, -50%);
+        color: #787885;
+      }
+
+      &-input {
+        width: 66.8rem;
+        border: none;
+        border-radius: 9.9rem;
+        background-color: #ededf0;
+        padding: 0.8rem 4.4rem;
+
+        font-size: 2rem;
+        color: #19191d;
+        font-family: "Inter";
+
+        line-height: 3.16rem;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &-closeicon {
+        position: absolute;
+        font-size: 2rem;
+        top: 50%;
+        right: 0.6rem;
+        transform: translate(-50%, -50%);
+
+        color: #2979ff;
+      }
+    }
+
+    &-label {
+      font-size: 2rem;
+      color: #2264d1;
+
+      &:hover {
+        border-bottom: 0.1rem solid #2264d1;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-user {
+    display: flex;
+
+    &-picture {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    &-signin {
+      padding: 0.8rem 1.2rem;
+      color: #2264d1;
+      font-size: 2rem;
+      border: 1px solid #9dc2ff;
+      border-radius: 0.4rem;
+      background-color: transparent;
+      margin-right: 2.1rem;
+      font-family: "Quicksand";
+      font-weight: 700;
+    }
+
+    &-cart {
+      position: relative;
+      padding: 0.5rem 1.2rem;
+      color: #2264d1;
+      font-size: 2rem;
+      border: none;
+      border-radius: 0.4rem;
+      background-color: transparent;
+      margin-right: 2.1rem;
+      font-family: "Quicksand";
+      font-weight: 700;
+
+      box-shadow: 0px 4px 8px 0px rgba(41, 121, 255, 0.2);
+
+      &-badge {
+        position: absolute;
+        background-color: #f44336;
+        color: white;
+        font-size: 1.4rem;
+
+        padding: 0.2rem 0.7rem;
+        border-radius: 50%;
+
+        top: -0.5rem;
+        right: -0.5rem;
+      }
+    }
+  }
+}

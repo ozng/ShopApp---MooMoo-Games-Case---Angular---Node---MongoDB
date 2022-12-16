@@ -5,4 +5,55 @@
     </span>
     <h2 class="side-category-bar-title-title">Departments</h2>
   </div>
+
+  <div class="side-category-bar-categories">
+    <ng-container *ngFor="let category of categories">
+      <div class="side-category-bar-categories-card">
+        <span
+          class="material-symbols-outlined side-category-bar-categories-card-icon"
+        >
+          chevron_right
+        </span>
+        <p class="side-category-bar-categories-card-label">
+          {{ category.name }}
+        </p>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="side-category-bar-filter">
+    <div class="side-category-bar-filter-hide">
+      <span class="side-category-bar-filter-hide-label">Collapsed filters</span>
+      <span
+        class="material-symbols-outlined side-category-bar-filter-hide-icon"
+      >
+        expand_more
+      </span>
+    </div>
+
+    <div class="side-category-bar-filter-show">
+      <div class="side-category-bar-filter-show-title">
+        <p class="side-category-bar-filter-show-title-label">
+          Expanded filters
+        </p>
+        <span
+          class="material-symbols-outlined side-category-bar-filter-show-title-icon"
+        >
+          expand_less
+        </span>
+      </div>
+
+      <ng-container *ngFor="let filter of sideFilters; let i = index">
+        <div class="side-category-bar-filter-show-filters">
+          <input
+            type="checkbox"
+            class="side-category-bar-filter-show-filters-checkbar"
+          />
+          <span class="side-category-bar-filter-show-filters-label">{{
+            filter.label
+          }}</span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
 </div>

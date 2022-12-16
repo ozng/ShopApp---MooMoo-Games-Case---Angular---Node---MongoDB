@@ -1,0 +1,31 @@
+.top-category-bar {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 3.2rem 0;
+
+  &-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem 0.4rem 0.4rem 0.4rem;
+    margin: 0 0.8rem;
+    color: #9696a0;
+
+    &-selected {
+      font-weight: 500;
+      color: #2979ff;
+    }
+
+    &-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &-label {
+      font-size: 1.4rem;
+      font-family: "Inter";
+      text-align: center;
+    }
+  }
+}

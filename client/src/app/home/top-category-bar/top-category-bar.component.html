@@ -1,0 +1,15 @@
+<div class="top-category-bar">
+  <ng-container *ngFor="let category of topCategories">
+    <div
+      [ngClass]="{
+        'top-category-bar-card-selected': category.id === selectedCategoryID
+      }"
+      class="top-category-bar-card"
+    >
+      <span class="material-symbols-outlined top-category-bar-card-icon">
+        {{ category.icon }}
+      </span>
+      <p class="top-category-bar-card-label">{{ category.label }}</p>
+    </div>
+  </ng-container>
+</div>

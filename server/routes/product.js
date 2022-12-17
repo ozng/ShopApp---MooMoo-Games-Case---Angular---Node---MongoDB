@@ -49,4 +49,22 @@ router.get("/get_category/:categoryID", async (req, res) => {
   }
 });
 
+// Search Project
+router.get("/search", async (req, res) => {
+  const searchText = req.body.query;
+
+  try {
+    const searchedProducts = await Product.find({
+      title: { $regex: searchText },
+    });
+
+    res.status(200).json(searchedProducts);
+  } catch (err) {
+    res.status(500).json({
+      message: "Something went wrong.",
+      error: err,
+    });
+  }
+});
+
 module.exports = router;

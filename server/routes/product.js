@@ -19,4 +19,18 @@ router.post("/add_product", async (req, res) => {
   }
 });
 
+// GET All Product
+router.get("/get_all", async (req, res) => {
+  try {
+    const allProduct = await Product.find();
+
+    res.status(200).json(allProduct);
+  } catch (err) {
+    res.status(500).json({
+      message: "Something went wrong.",
+      error: err,
+    });
+  }
+});
+
 module.exports = router;

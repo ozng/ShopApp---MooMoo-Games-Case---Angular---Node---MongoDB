@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,6 +11,7 @@ import { TopCategoryBarComponent } from './home/top-category-bar/top-category-ba
 import { ProductListComponent } from './home/product-list/product-list.component';
 import { SideCategoryBarComponent } from './home/side-category-bar/side-category-bar.component';
 import { CategoryComponent } from './home/side-category-bar/category/category.component';
+import { productReducer } from './store/products/product.reducer';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,12 @@ import { CategoryComponent } from './home/side-category-bar/category/category.co
     SideCategoryBarComponent,
     CategoryComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    StoreModule.forRoot({ products: productReducer }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -65,7 +65,7 @@
   </div>
 
   <div class="product-list-list" *ngIf="productList">
-    <ng-container *ngFor="let product of productList">
+    <ng-container *ngFor="let product of productList | async">
       <div class="product-list-list-wrapper">
         <div class="product-list-list-card">
           <img

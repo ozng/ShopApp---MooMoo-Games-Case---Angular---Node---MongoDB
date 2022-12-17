@@ -6,7 +6,7 @@ const ProductSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    description: Array,
+    overview: String,
     price: {
       type: Number,
       required: true,
@@ -19,6 +19,17 @@ const ProductSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    rating: Number,
+    quantity: Number,
+    popularity: Number,
+    brand: String,
+    color: [
+      {
+        name: String,
+        price: Number,
+        imageUrl: String,
+      },
+    ],
   },
   { timestamps: true }
 );

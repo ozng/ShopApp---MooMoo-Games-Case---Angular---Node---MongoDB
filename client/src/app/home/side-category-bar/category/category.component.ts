@@ -16,13 +16,17 @@ interface Category {
 export class CategoryComponent {
   @Input() category: Category[] = [];
 
+  selectedCategory: string = '';
+
   constructor(private productService: ProductService, private store: Store) {}
 
   getProductByCategory(categoryId: string) {
+    this.selectedCategory = '';
     this.productService.getProductsByCategory(categoryId).subscribe({
       next: (response) => {
         this.store.dispatch(getCategoryProduct({ products: response }));
       },
     });
+    this.selectedCategory = categoryId;
   }
 }

@@ -8,6 +8,10 @@
         chevron_right
       </span>
       <p
+        [ngClass]="{
+          'category-bar-categories-card-wrapper-label-selected':
+            c.id === selectedCategory
+        }"
         (click)="getProductByCategory(c.id)"
         class="category-bar-categories-card-wrapper-label"
       >

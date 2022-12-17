@@ -1,0 +1,19 @@
+.category-bar-categories-card {
+  &-wrapper {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-family: "Inter";
+    padding: 0.8rem 0;
+    cursor: pointer;
+
+    &-icon {
+      color: #76a9ff;
+    }
+
+    &-label {
+      color: #19191d;
+    }
+  }
+}

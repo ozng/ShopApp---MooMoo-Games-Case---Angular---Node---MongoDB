@@ -9,6 +9,7 @@ import { HeaderComponent } from './common/header/header.component';
 import { TopCategoryBarComponent } from './home/top-category-bar/top-category-bar.component';
 import { ProductListComponent } from './home/product-list/product-list.component';
 import { SideCategoryBarComponent } from './home/side-category-bar/side-category-bar.component';
+import { CategoryComponent } from './home/side-category-bar/category/category.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SideCategoryBarComponent } from './home/side-category-bar/side-category
     TopCategoryBarComponent,
     ProductListComponent,
     SideCategoryBarComponent,
+    CategoryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

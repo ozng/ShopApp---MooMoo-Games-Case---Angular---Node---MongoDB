@@ -8,15 +8,23 @@
 
   <div class="side-category-bar-categories">
     <ng-container *ngFor="let category of categories">
-      <div class="side-category-bar-categories-card">
-        <span
-          class="material-symbols-outlined side-category-bar-categories-card-icon"
-        >
-          chevron_right
-        </span>
-        <p class="side-category-bar-categories-card-label">
-          {{ category.name }}
-        </p>
+      <div
+        class="side-category-bar-categories-card"
+        (click)="toggleCategory(category.id)"
+      >
+        <div class="side-category-bar-categories-card-wrapper">
+          <span
+            class="material-symbols-outlined side-category-bar-categories-card-wrapper-icon"
+          >
+            chevron_right
+          </span>
+          <p class="side-category-bar-categories-card-wrapper-label">
+            {{ category.name }}
+          </p>
+        </div>
+        <div *ngIf="category.isShow">
+          <app-category [category]="category.category"></app-category>
+        </div>
       </div>
     </ng-container>
   </div>

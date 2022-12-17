@@ -33,4 +33,20 @@ router.get("/get_all", async (req, res) => {
   }
 });
 
+// GET Product by category
+router.get("/get_category/:categoryID", async (req, res) => {
+  try {
+    const categoryID = req.params.categoryID;
+
+    const filteredProduct = await Product.find({ categoryId: categoryID });
+
+    res.status(200).json(filteredProduct);
+  } catch (err) {
+    res.status(500).json({
+      message: "Something went wrong.",
+      error: err,
+    });
+  }
+});
+
 module.exports = router;

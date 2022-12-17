@@ -33,6 +33,10 @@
             chevron_right
           </span>
           <p
+            [ngClass]="{
+              'side-category-bar-categories-card-wrapper-label-selected':
+                category.isShow === true
+            }"
             class="side-category-bar-categories-card-wrapper-label"
             (click)="toggleCategory(category.id)"
           >
@@ -45,9 +49,12 @@
       </div>
     </ng-container>
   </div>
-
   <div class="side-category-bar-filter">
-    <div class="side-category-bar-filter-hide">
+    <div
+      class="side-category-bar-filter-hide"
+      *ngIf="!isFilterShow"
+      (click)="toggleFilter()"
+    >
       <span class="side-category-bar-filter-hide-label">Collapsed filters</span>
       <span
         class="material-symbols-outlined side-category-bar-filter-hide-icon"
@@ -56,8 +63,8 @@
       </span>
     </div>
 
-    <div class="side-category-bar-filter-show">
-      <div class="side-category-bar-filter-show-title">
+    <div class="side-category-bar-filter-show" *ngIf="isFilterShow">
+      <div (click)="toggleFilter()" class="side-category-bar-filter-show-title">
         <p class="side-category-bar-filter-show-title-label">
           Expanded filters
         </p>
@@ -67,16 +74,20 @@
           expand_less
         </span>
       </div>
-
       <ng-container *ngFor="let filter of sideFilters; let i = index">
         <div class="side-category-bar-filter-show-filters">
           <input
-            type="checkbox"
+            type="radio"
             class="side-category-bar-filter-show-filters-checkbar"
+            id="{{ i }}"
+            name="group1[]"
           />
-          <span class="side-category-bar-filter-show-filters-label">{{
-            filter.label
-          }}</span>
+          <label
+            for="{{ i }}"
+            (click)="filterProducts(filter.id)"
+            class="side-category-bar-filter-show-filters-label"
+            >{{ filter.label }}</label
+          >
         </div>
       </ng-container>
     </div>

@@ -21,8 +21,6 @@ export class HomeComponent implements OnInit {
       next: (response) => {
         this.store.dispatch(getAllProductFromAPI({ products: response }));
         this.productList = this.allProduct$;
-
-        console.log(response);
       },
     });
   }

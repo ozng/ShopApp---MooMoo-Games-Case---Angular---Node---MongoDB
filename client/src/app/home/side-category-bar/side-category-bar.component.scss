@@ -36,37 +36,14 @@
         }
         &-label {
           color: #19191d;
+
+          &-selected {
+            font-weight: 500;
+          }
         }
       }
     }
   }
-
-  // &-categories {
-  //   margin: 4.6rem 0;
-  //   font-size: 1.6rem;
-  //   font-family: "Inter";
-
-  //   &-card {
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: center;
-  //     gap: 1.4rem;
-  //     margin-bottom: 1.6rem;
-  //     cursor: pointer;
-
-  //     &-wrapper {
-  //       display: flex;
-  //     }
-
-  //     &-icon {
-  //       color: #2264d1;
-  //     }
-
-  //     &-label {
-  //       color: #19191d;
-  //     }
-  //   }
-  // }
 
   &-filter {
     &-hide {
@@ -118,13 +95,19 @@
 
       &-filters {
         margin: 1.8rem 0;
+
         &-checkbar {
           margin-left: 0.8rem;
+
+          height: 1.2rem;
+          width: 1.2rem;
+          background-color: red;
         }
 
         &-label {
           padding-left: 1.8rem;
           font-family: "Inter";
+          cursor: pointer;
         }
       }
     }

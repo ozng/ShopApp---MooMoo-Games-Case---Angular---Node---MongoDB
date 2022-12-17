@@ -1,7 +1,26 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ProductService } from 'src/app/services/product.service';
-import { getAllProduct } from 'src/app/store/products/product.actions';
+import {
+  getAllProduct,
+  sortByPriceLow,
+  sortByPriceHigh,
+  sortByMostRated,
+  sortByExpire,
+  sortByRecentlyAdded,
+} from 'src/app/store/products/product.actions';
+
+interface Category {
+  id: string;
+  name: string;
+}
+
+interface Categories {
+  id: number;
+  name: string;
+  isShow: boolean;
+  category: Category[];
+}
 @Component({
   selector: 'app-side-category-bar',
   templateUrl: './side-category-bar.component.html',
@@ -10,13 +29,31 @@ import { getAllProduct } from 'src/app/store/products/product.actions';
 export class SideCategoryBarComponent {
   constructor(private productService: ProductService, private store: Store) {}
 
+  oldIndex: number = -1;
+
   toggleCategory(categoryId: number) {
     const categoryIndex = this.categories.findIndex(
       (category) => category.id === categoryId
     );
 
+    if (this.oldIndex === categoryIndex) {
+      this.categories[categoryIndex].isShow = false;
+      this.oldIndex = -1;
+      return;
+    }
+
+    this.oldIndex = categoryIndex;
+
+    this.categories.forEach((item) => (item.isShow = false));
+
     this.categories[categoryIndex].isShow =
       !this.categories[categoryIndex].isShow;
+  }
+
+  isFilterShow: boolean = false;
+
+  toggleFilter() {
+    this.isFilterShow = !this.isFilterShow;
   }
 
   reFetchAllProducts() {
@@ -27,11 +64,27 @@ export class SideCategoryBarComponent {
     });
   }
 
+  filterProducts(id: number) {
+    switch (id) {
+      case 6:
+        this.store.dispatch(sortByPriceLow());
+        break;
+      case 5:
+        this.store.dispatch(sortByPriceHigh());
+        break;
+      case 4:
+        this.store.dispatch(sortByMostRated());
+        break;
+      case 3:
+        this.store.dispatch(sortByExpire());
+        break;
+      case 2:
+        this.store.dispatch(sortByRecentlyAdded());
+        break;
+    }
+  }
+
   sideFilters = [
-    {
-      id: 1,
-      label: 'Recommended',
-    },
     {
       id: 2,
       label: 'Recently Added',
@@ -54,7 +107,7 @@ export class SideCategoryBarComponent {
     },
   ];
 
-  categories = [
+  categories: Categories[] = [
     {
       id: 1,
       name: 'Cell Phones & Smartphones',

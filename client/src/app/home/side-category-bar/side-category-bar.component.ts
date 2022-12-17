@@ -1,12 +1,15 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
-import { CategoryComponent } from './category/category.component';
-
+import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { ProductService } from 'src/app/services/product.service';
+import { getAllProduct } from 'src/app/store/products/product.actions';
 @Component({
   selector: 'app-side-category-bar',
   templateUrl: './side-category-bar.component.html',
   styleUrls: ['./side-category-bar.component.scss'],
 })
 export class SideCategoryBarComponent {
+  constructor(private productService: ProductService, private store: Store) {}
+
   toggleCategory(categoryId: number) {
     const categoryIndex = this.categories.findIndex(
       (category) => category.id === categoryId
@@ -14,6 +17,14 @@ export class SideCategoryBarComponent {
 
     this.categories[categoryIndex].isShow =
       !this.categories[categoryIndex].isShow;
+  }
+
+  reFetchAllProducts() {
+    this.productService.getAllProducts().subscribe({
+      next: (response) => {
+        this.store.dispatch(getAllProduct({ products: response }));
+      },
+    });
   }
 
   sideFilters = [

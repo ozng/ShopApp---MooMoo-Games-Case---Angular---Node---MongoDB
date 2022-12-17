@@ -7,18 +7,35 @@
   </div>
 
   <div class="side-category-bar-categories">
+    <div class="side-category-bar-categories-card">
+      <div class="side-category-bar-categories-card-wrapper">
+        <span
+          class="material-symbols-outlined side-category-bar-categories-card-wrapper-icon"
+          (click)="reFetchAllProducts()"
+        >
+          chevron_right
+        </span>
+        <p
+          class="side-category-bar-categories-card-wrapper-label"
+          (click)="reFetchAllProducts()"
+        >
+          All Products
+        </p>
+      </div>
+    </div>
     <ng-container *ngFor="let category of categories">
-      <div
-        class="side-category-bar-categories-card"
-        (click)="toggleCategory(category.id)"
-      >
+      <div class="side-category-bar-categories-card">
         <div class="side-category-bar-categories-card-wrapper">
           <span
             class="material-symbols-outlined side-category-bar-categories-card-wrapper-icon"
+            (click)="toggleCategory(category.id)"
           >
             chevron_right
           </span>
-          <p class="side-category-bar-categories-card-wrapper-label">
+          <p
+            class="side-category-bar-categories-card-wrapper-label"
+            (click)="toggleCategory(category.id)"
+          >
             {{ category.name }}
           </p>
         </div>

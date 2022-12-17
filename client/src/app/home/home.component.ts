@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductData } from '../models/product.model';
 import { ProductService } from '../services/product.service';
 
 import { Store } from '@ngrx/store';
-import {
-  getAllProduct as getAllProductFromAPI,
-  getCategoryProduct,
-} from '../store/products/product.actions';
+import { getAllProduct as getAllProductFromAPI } from '../store/products/product.actions';
 import { selectAllProducts } from '../store/products/product.selectors';
 @Component({
   selector: 'app-home',

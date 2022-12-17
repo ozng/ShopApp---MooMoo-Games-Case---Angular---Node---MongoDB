@@ -1,5 +1,4 @@
 import { createAction, props } from '@ngrx/store';
-import { ProductData } from 'src/app/models/product.model';
 
 export const GET_ALL: string = 'GET_ALL';
 export const GET_CATEGORY: string = 'GET_CATEGORY';

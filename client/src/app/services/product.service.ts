@@ -13,4 +13,10 @@ export class ProductService {
   getAllProducts(): Observable<ProductData> {
     return this.http.get<ProductData>(`${environment.apiUrl}/product/get_all`);
   }
+
+  getProductsByCategory(categoryId: string): Observable<ProductData> {
+    return this.http.get<ProductData>(
+      `${environment.apiUrl}/product/get_category/${categoryId}`
+    );
+  }
 }

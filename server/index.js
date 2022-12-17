@@ -2,12 +2,15 @@ const express = require("express");
 const mongoose = require("mongoose");
 const helmet = require("helmet");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 const productRoute = require("./routes/product");
 
 const app = express();
 
 const PORT = 8800;
+
+app.use(cors());
 
 dotenv.config();
 

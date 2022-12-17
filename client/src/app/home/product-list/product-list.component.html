@@ -64,12 +64,12 @@
     <span class="product-list-mid-label">vintage typewriter</span>
   </div>
 
-  <div class="product-list-list">
+  <div class="product-list-list" *ngIf="productList">
     <ng-container *ngFor="let product of productList">
       <div class="product-list-list-wrapper">
         <div class="product-list-list-card">
           <img
-            src="{{ product.imageURL }}"
+            src="{{ product.imageUrl }}"
             alt="product picture"
             class="product-list-list-card-image"
           />
@@ -81,7 +81,7 @@
             {{ product.overview }}
           </p>
           <div class="product-list-list-card-rate">
-            <p class="product-list-list-card-rate-rate">{{ product.rate }}</p>
+            <p class="product-list-list-card-rate-rate">{{ product.rating }}</p>
             <button class="product-list-list-card-rate-favorite">
               <span
                 class="material-symbols-outlined product-list-list-card-rate-favorite-icon"

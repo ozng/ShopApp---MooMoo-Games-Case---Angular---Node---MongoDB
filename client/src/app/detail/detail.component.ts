@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { selectSelectedProduct } from '../store/products/product.selectors';
 
@@ -14,7 +15,9 @@ export class DetailComponent implements OnInit {
 
   selectedProduct?: any;
 
-  constructor(private store: Store) {}
+  productId: string = '';
+
+  constructor(private store: Store, private activatedRoute: ActivatedRoute) {}
 
   quantity: number = 1;
 
@@ -22,5 +25,9 @@ export class DetailComponent implements OnInit {
     this.product = this.selectedProduct$;
 
     this.selectedProduct = this.product.actionsObserver._value;
+
+    this.productId = this.activatedRoute.snapshot.paramMap.get('id')!;
+
+    console.log(this.productId);
   }
 }

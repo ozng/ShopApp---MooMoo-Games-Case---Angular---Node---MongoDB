@@ -67,7 +67,10 @@
   <div class="product-list-list" *ngIf="productList">
     <ng-container *ngFor="let product of productList | async">
       <div class="product-list-list-wrapper">
-        <a class="product-list-list-wrapper-anchor" routerLink="detail">
+        <a
+          class="product-list-list-wrapper-anchor"
+          routerLink="detail/{{ product._id }}"
+        >
           <div
             class="product-list-list-card"
             (click)="setSelectedProduct(product)"

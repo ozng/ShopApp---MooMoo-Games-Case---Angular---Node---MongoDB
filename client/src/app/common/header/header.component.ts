@@ -15,6 +15,10 @@ export class HeaderComponent {
 
   searchedProduct = [];
 
+  resetSearchInput() {
+    this.searchText = '';
+  }
+
   searchHandler() {
     this.productService
       .search(
@@ -23,6 +27,7 @@ export class HeaderComponent {
       .subscribe({
         next: (response) => {
           this.store.dispatch(search({ products: response }));
+          this.resetSearchInput();
         },
       });
   }

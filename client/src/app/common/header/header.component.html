@@ -36,20 +36,26 @@
 
   <div class="header-search">
     <div class="header-search-bar">
-      <span class="material-symbols-outlined header-search-bar-searchicon">
-        search
-      </span>
       <form #form="ngForm" (submit)="searchHandler()">
+        <span
+          (click)="searchHandler()"
+          class="material-symbols-outlined header-search-bar-searchicon"
+        >
+          search
+        </span>
         <input
           type="text"
           class="header-search-bar-input"
           name="search"
           [(ngModel)]="searchText"
         />
+        <span
+          (click)="resetSearchInput()"
+          class="material-symbols-outlined header-search-bar-closeicon"
+        >
+          close
+        </span>
       </form>
-      <span class="material-symbols-outlined header-search-bar-closeicon">
-        close
-      </span>
     </div>
     <p class="header-search-label">Consumer Electronics</p>
   </div>

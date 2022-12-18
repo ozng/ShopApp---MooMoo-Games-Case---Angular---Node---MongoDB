@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ProductData } from '../models/product.model';
 import { environment } from '../../environment/environment';
 
@@ -17,6 +17,13 @@ export class ProductService {
   getProductsByCategory(categoryId: string): Observable<ProductData> {
     return this.http.get<ProductData>(
       `${environment.apiUrl}/product/get_category/${categoryId}`
+    );
+  }
+
+  search(text: string): Observable<ProductData> {
+    console.log(text);
+    return this.http.get<ProductData>(
+      `${environment.apiUrl}/product/search/${text}`
     );
   }
 }

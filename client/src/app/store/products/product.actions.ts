@@ -8,6 +8,7 @@ export const SORT_BY_MOST_RATED: string = 'SORT_BY_MOST_RATED';
 export const SORT_BY_EXPIRING_SOON: string = 'SORT_BY_EXPIRING_SOON';
 export const SORT_BY_RECENTLY_ADDED: string = 'SORT_BY_RECENTLY_ADDED';
 export const RECOMMENDED: string = 'RECOMMENDED';
+export const SEARCH: string = 'SEARCH';
 
 export const getAllProduct = createAction(GET_ALL, props<{ products: any }>());
 
@@ -15,6 +16,7 @@ export const getCategoryProduct = createAction(
   GET_CATEGORY,
   props<{ products: any }>()
 );
+export const search = createAction(SEARCH, props<{ products: any }>());
 
 export const sortByPriceLow = createAction(SORT_BY_PRICE_LOW);
 export const sortByPriceHigh = createAction(SORT_BY_PRICE_HIGH);

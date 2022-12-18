@@ -50,8 +50,9 @@ router.get("/get_category/:categoryID", async (req, res) => {
 });
 
 // Search Project
-router.get("/search", async (req, res) => {
-  const searchText = req.body.query;
+router.get("/search/:text", async (req, res) => {
+  const searchText = req.params.text;
+  console.log(searchText);
 
   try {
     const searchedProducts = await Product.find({

@@ -39,7 +39,14 @@
       <span class="material-symbols-outlined header-search-bar-searchicon">
         search
       </span>
-      <input type="text" class="header-search-bar-input" />
+      <form #form="ngForm" (submit)="searchHandler()">
+        <input
+          type="text"
+          class="header-search-bar-input"
+          name="search"
+          [(ngModel)]="searchText"
+        />
+      </form>
       <span class="material-symbols-outlined header-search-bar-closeicon">
         close
       </span>

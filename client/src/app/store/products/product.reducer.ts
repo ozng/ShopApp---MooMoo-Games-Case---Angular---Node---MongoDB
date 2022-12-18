@@ -8,6 +8,7 @@ import {
   sortByExpire,
   sortByRecentlyAdded,
   recommended,
+  search,
 } from './product.actions';
 
 export interface ProductState {
@@ -70,5 +71,9 @@ export const productReducer = createReducer(
     products: state.products
       .slice()
       .filter((product: any) => product.overview.includes('Eligible')),
+  })),
+  on(search, (state, { products }) => ({
+    ...state,
+    products: products,
   }))
 );

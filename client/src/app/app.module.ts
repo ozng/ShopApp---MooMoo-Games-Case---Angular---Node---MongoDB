@@ -13,6 +13,7 @@ import { SideCategoryBarComponent } from './home/side-category-bar/side-category
 import { CategoryComponent } from './home/side-category-bar/category/category.component';
 import { productReducer } from './store/products/product.reducer';
 import { FooterComponent } from './common/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FooterComponent } from './common/footer/footer.component';
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot({ products: productReducer }),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

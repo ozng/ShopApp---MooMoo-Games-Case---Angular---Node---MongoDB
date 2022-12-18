@@ -49,7 +49,22 @@ router.get("/get_category/:categoryID", async (req, res) => {
   }
 });
 
-// Search Project
+// Get Product by ID
+router.get("/get/:id", async (req, res) => {
+  const productID = req.params.id;
+  try {
+    const product = await Product.findById(productID);
+
+    res.status(200).json(product);
+  } catch (err) {
+    res.status(500).json({
+      message: "Something went wrong.",
+      error: err,
+    });
+  }
+});
+
+// Search Product
 router.get("/search/:text", async (req, res) => {
   const searchText = req.params.text;
   console.log(searchText);

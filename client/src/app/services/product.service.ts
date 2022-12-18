@@ -26,4 +26,10 @@ export class ProductService {
       `${environment.apiUrl}/product/search/${text}`
     );
   }
+
+  getProductByID(productID: string): Observable<ProductData> {
+    return this.http.get<ProductData>(
+      `${environment.apiUrl}/product/get/${productID}`
+    );
+  }
 }

@@ -1,5 +1,214 @@
 .detail {
   display: flex;
+  height: 80rem;
+  width: 90%;
 
-  margin-top: 5.6rem;
+  margin: 5.6rem 0 0 auto;
+
+  border: 1px solid black;
+  border-radius: 0 1rem 1rem 0;
+
+  &-left {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-imageL {
+      width: 90%;
+      object-fit: contain;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    &-imageS {
+      width: 15%;
+      object-fit: contain;
+
+      margin-top: auto;
+      margin-bottom: 1.3rem;
+    }
+  }
+
+  &-right {
+    display: flex;
+    flex-direction: column;
+
+    width: 60%;
+    background-color: #efefef;
+
+    border-radius: 0 1rem 1rem 0;
+
+    padding-left: 5.7rem;
+
+    font-family: "Montserrat";
+
+    &-title {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-top: 3.7rem;
+    }
+
+    &-brand {
+      margin-top: 1rem;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #00a3ff;
+    }
+
+    &-rateandprice {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 5.7rem;
+      margin-top: 2.8rem;
+
+      &-price {
+        font-weight: 700;
+        font-size: 4.8rem;
+      }
+
+      &-tl {
+        font-size: 2.4rem;
+        font-weight: 700;
+      }
+
+      &-ratecont {
+        &-rate {
+          &-num {
+            color: #00a3ff;
+            font-weight: 700;
+            font-size: 3.2rem;
+          }
+        }
+
+        &-comment {
+          color: #919191;
+          font-weight: 700;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    &-saller {
+      display: flex;
+      width: max-content;
+      margin-top: 7rem;
+      padding: 0.7rem 1.9rem;
+      background-color: white;
+      border-radius: 0.5rem;
+
+      &-label {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: #a9a9a9;
+      }
+
+      &-saller {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #00a3ff;
+        margin-left: 0.8rem;
+      }
+    }
+
+    &-divider {
+      height: 0.1rem;
+      background-color: #8e8e8e;
+      margin-right: 5.7rem;
+      margin-top: 1.3rem;
+      margin-bottom: 5.3rem;
+    }
+
+    &-color {
+      display: flex;
+      gap: 2.3rem;
+
+      &-card {
+        display: flex;
+        padding: 1.3rem 3.9rem 1.3rem 1.5rem;
+        border-radius: 0.5rem;
+        background-color: white;
+
+        &-image {
+          width: 5.4rem;
+          height: 5.4rem;
+          object-fit: contain;
+        }
+
+        &-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          font-size: 1.4rem;
+          font-family: "Montserrat";
+          font-weight: 700;
+          padding-left: 0.5rem;
+
+          &-name {
+          }
+
+          &-price {
+          }
+        }
+      }
+    }
+
+    &-btns {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+
+      margin-right: 4rem;
+      margin-bottom: 3.7rem;
+      font-family: "Roboto";
+      font-weight: 400;
+      font-size: 2.4rem;
+
+      &-right {
+        background-color: #f8f8f8;
+        border-radius: 1rem;
+
+        &-decrease {
+          border: none;
+          padding: 0.8rem 1.6rem;
+          cursor: pointer;
+          font-size: 2.4rem;
+          border-radius: 0.3rem 0 0 0.3rem;
+          border: 0.5px solid #d1d1d1;
+        }
+
+        &-quantity {
+          padding: 0.7rem 2.3rem;
+        }
+
+        &-increase {
+          border: none;
+          padding: 0.8rem 1.6rem;
+          cursor: pointer;
+          font-size: 2.4rem;
+          border-radius: 0 0.3rem 0.3rem 0;
+          border: 0.5px solid #d1d1d1;
+        }
+      }
+
+      &-left {
+        &-btn {
+          font-size: 3.2rem;
+          font-weight: 800;
+
+          border: none;
+          background-color: #2979ff;
+          border-radius: 1rem;
+
+          padding: 2.7rem 8.9rem;
+
+          color: white;
+
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }

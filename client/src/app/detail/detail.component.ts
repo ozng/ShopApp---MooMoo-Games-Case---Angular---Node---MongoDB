@@ -16,6 +16,8 @@ export class DetailComponent implements OnInit {
 
   constructor(private store: Store) {}
 
+  quantity: number = 1;
+
   ngOnInit(): void {
     this.product = this.selectedProduct$;
 

@@ -2,7 +2,77 @@
 <div class="container">
   <app-top-category-bar></app-top-category-bar>
   <div class="detail">
-    <h1>{{ selectedProduct.title }}</h1>
+    <div class="detail-left">
+      <img
+        class="detail-left-imageL"
+        src="{{ selectedProduct.imageUrl }}"
+        alt="big image"
+      />
+      <img
+        class="detail-left-imageS"
+        src="{{ selectedProduct.imageUrl }}"
+        alt="big image"
+      />
+    </div>
+    <div class="detail-right">
+      <h1 class="detail-right-title">{{ selectedProduct.title }}</h1>
+      <h1 class="detail-right-brand">{{ selectedProduct.brand }}</h1>
+
+      <div class="detail-right-rateandprice">
+        <p class="detail-right-rateandprice-price">
+          {{ selectedProduct.price }}
+          <span class="detail-right-rateandprice-tl">TL</span>
+        </p>
+        <div class="detail-right-rateandprice-ratecont">
+          <div class="detail-right-rateandprice-ratecont-rate">
+            <p class="detail-right-rateandprice-ratecont-rate-num">
+              {{ selectedProduct.rating }}
+            </p>
+          </div>
+          <p class="detail-right-rateandprice-ratecont-comment">
+            300 Değerlendirme
+          </p>
+        </div>
+      </div>
+
+      <div class="detail-right-saller">
+        <p class="detail-right-saller-label">Satıcı:</p>
+        <span class="detail-right-saller-saller">Hepsişurada</span>
+      </div>
+
+      <div class="detail-right-divider"></div>
+
+      <div *ngIf="selectedProduct.color.length > 0" class="detail-right-color">
+        <ng-container *ngFor="let color of selectedProduct.color">
+          <div class="detail-right-color-card">
+            <img
+              src="{{ color.imageUrl }}"
+              alt="color image"
+              class="detail-right-color-card-image"
+            />
+            <div class="detail-right-color-card-info">
+              <p class="detail-right-color-card-info-name">
+                {{ color.name | titlecase }}
+              </p>
+              <p class="detail-right-color-card-info-price">
+                {{ color.price }}
+              </p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <div class="detail-right-btns">
+        <div class="detail-right-btns-right">
+          <button class="detail-right-btns-right-decrease">-</button>
+          <span class="detail-right-btns-right-quantity">{{ quantity }}</span>
+          <button class="detail-right-btns-right-increase">+</button>
+        </div>
+        <div class="detail-right-btns-left">
+          <button class="detail-right-btns-left-btn">Sepete Ekle</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <app-footer></app-footer>

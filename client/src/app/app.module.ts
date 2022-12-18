@@ -14,6 +14,7 @@ import { CategoryComponent } from './home/side-category-bar/category/category.co
 import { productReducer } from './store/products/product.reducer';
 import { FooterComponent } from './common/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     SideCategoryBarComponent,
     CategoryComponent,
     FooterComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,

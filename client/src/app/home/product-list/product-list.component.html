@@ -67,30 +67,37 @@
   <div class="product-list-list" *ngIf="productList">
     <ng-container *ngFor="let product of productList | async">
       <div class="product-list-list-wrapper">
-        <div class="product-list-list-card">
-          <img
-            src="{{ product.imageUrl }}"
-            alt="product picture"
-            class="product-list-list-card-image"
-          />
-          <p class="product-list-list-card-title">
-            {{ product.title }}
-          </p>
-          <p class="product-list-list-card-price">${{ product.price }}</p>
-          <p class="product-list-list-card-overview">
-            {{ product.overview }}
-          </p>
-          <div class="product-list-list-card-rate">
-            <p class="product-list-list-card-rate-rate">{{ product.rating }}</p>
-            <button class="product-list-list-card-rate-favorite">
-              <span
-                class="material-symbols-outlined product-list-list-card-rate-favorite-icon"
-              >
-                favorite </span
-              >Watch
-            </button>
+        <a class="product-list-list-wrapper-anchor" routerLink="detail">
+          <div
+            class="product-list-list-card"
+            (click)="setSelectedProduct(product)"
+          >
+            <img
+              src="{{ product.imageUrl }}"
+              alt="product picture"
+              class="product-list-list-card-image"
+            />
+            <p class="product-list-list-card-title">
+              {{ product.title }}
+            </p>
+            <p class="product-list-list-card-price">${{ product.price }}</p>
+            <p class="product-list-list-card-overview">
+              {{ product.overview }}
+            </p>
+            <div class="product-list-list-card-rate">
+              <p class="product-list-list-card-rate-rate">
+                {{ product.rating }}
+              </p>
+              <button class="product-list-list-card-rate-favorite">
+                <span
+                  class="material-symbols-outlined product-list-list-card-rate-favorite-icon"
+                >
+                  favorite </span
+                >Watch
+              </button>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </ng-container>
   </div>

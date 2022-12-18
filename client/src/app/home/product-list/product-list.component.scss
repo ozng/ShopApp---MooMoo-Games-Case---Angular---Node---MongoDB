@@ -131,6 +131,11 @@
     &-wrapper {
       flex: 0 0 23.5%;
       display: flex;
+
+      &-anchor {
+        text-decoration: none;
+        color: inherit;
+      }
     }
 
     &-card {

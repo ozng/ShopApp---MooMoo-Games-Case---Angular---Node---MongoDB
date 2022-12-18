@@ -9,16 +9,19 @@ import {
   sortByRecentlyAdded,
   recommended,
   search,
+  setSelectedProduct,
 } from './product.actions';
 
 export interface ProductState {
   products: any;
+  selectedProduct: any;
   error: string;
   status: 'pending' | 'loading' | 'error' | 'success';
 }
 
 export const initialState: ProductState = {
   products: [],
+  selectedProduct: {},
   error: '',
   status: 'pending',
 };
@@ -75,5 +78,9 @@ export const productReducer = createReducer(
   on(search, (state, { products }) => ({
     ...state,
     products: products,
+  })),
+  on(setSelectedProduct, (state, { selectedProduct }) => ({
+    ...state,
+    selectedProduct: selectedProduct,
   }))
 );

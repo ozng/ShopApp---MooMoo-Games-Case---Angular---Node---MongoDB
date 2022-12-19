@@ -1,38 +1,73 @@
 <div id="rating">
-  <div class="rating-group">
-    <input
-      class="rating__input rating__input--none"
-      checked
-      name="rating2"
-      id="rating2-0"
-      value="0"
-      type="radio"
-    />
-    <label aria-label="0 stars" class="rating__label" for="rating2-0"
-      >&nbsp;</label
-    >
-    <label
-      aria-label="0.5 stars"
-      class="rating__label rating__label--half"
-      for="rating2-05"
-      ><i class="rating__icon rating__icon--star fa fa-star-half"></i
-    ></label>
-    <input
-      class="rating__input"
-      name="rating2"
-      id="rating2-05"
-      value="0.5"
-      type="radio"
-    />
-    <label aria-label="1 star" class="rating__label" for="rating2-10"
-      ><i class="rating__icon rating__icon--star fa fa-star"></i
-    ></label>
-    <input
-      class="rating__input"
-      name="rating2"
-      id="rating2-10"
-      value="1"
-      type="radio"
-    />
+  <div class="star1" *ngIf="rating === 1">
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+  </div>
+
+  <div class="star1" *ngIf="rating === 1.5">
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star-half-o rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+  </div>
+
+  <div class="star2" *ngIf="rating === 2">
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+  </div>
+
+  <div class="star2" *ngIf="rating === 2.5">
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star-half-o rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+  </div>
+
+  <div class="star3" *ngIf="rating === 3">
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+  </div>
+
+  <div class="star3" *ngIf="rating === 3.5">
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star-half-o rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+  </div>
+
+  <div class="star4" *ngIf="rating === 4">
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star-o rating-rate checked"></div>
+  </div>
+
+  <div class="star4" *ngIf="rating === 4.5">
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star-half-o rating-rate checked"></div>
+  </div>
+
+  <div class="star5" *ngIf="rating === 5">
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
+    <div class="fa fa-star rating-rate checked"></div>
   </div>
 </div>

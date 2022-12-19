@@ -4,16 +4,6 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent {
   @Input() productList: any = [];
-
-  totalStar: any;
-
-  ngOnInit(): void {
-    for (let index = 0; index < this.productList.rating; index++) {
-      this.totalStar.push(index);
-    }
-
-    console.log(this.totalStar);
-  }
 }

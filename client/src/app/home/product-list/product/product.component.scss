@@ -60,11 +60,18 @@
       align-items: center;
       margin-top: auto;
 
-      &-rate {
-        font-size: 1.4rem;
-        color: #5e6366;
-        font-family: "Roboto";
-        font-weight: 500;
+      &-cont {
+        display: flex;
+        align-items: center;
+
+        &-rate {
+          margin-left: 0.5rem;
+
+          font-size: 1.4rem;
+          color: #5e6366;
+          font-family: "Roboto";
+          font-weight: 500;
+        }
       }
 
       &-favorite {

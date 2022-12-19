@@ -1,60 +1,9 @@
+.checked {
+  color: #fb8200;
+}
+
 .rating {
-  &-group {
-    display: inline-flex;
+  &-rate {
+    margin-right: 0.5rem;
   }
-
-  &__icon {
-    pointer-events: none;
-  }
-
-  &__input {
-    position: absolute !important;
-    left: -9999px !important;
-  }
-
-  &__input--none:checked + &__label &__icon--none {
-    color: red;
-  }
-
-  &__label {
-    cursor: pointer;
-    padding: 0 0.1em;
-    font-size: 2rem;
-  }
-
-  &__label--half {
-    padding-right: 0;
-    margin-right: -0.6em;
-    z-index: 2;
-  }
-
-  &__icon--star {
-    color: #fb8200;
-  }
-
-  &__icon--none {
-    color: #eee;
-  }
-
-  // &__input:checked ~ &__label &__icon--star {
-  //   color: #ddd;
-  // }
-
-  // &-group:hover &__label &__icon--star,
-  // &-group:hover &__label--half &__icon--star {
-  //   color: #fb8200;
-  // }
-
-  // &__input:hover ~ &__label &__icon--star,
-  // &__input:hover ~ &__label--half &__icon--star {
-  //   color: #ddd;
-  // }
-
-  // &-group:hover &__input--none:not(:hover) + &__label &__icon--none {
-  //   color: #eee;
-  // }
-
-  // &__input--none:hover + &__label &__icon--none {
-  //   color: red;
-  // }
 }

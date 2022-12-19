@@ -16,9 +16,12 @@
       {{ product.overview }}
     </p>
     <div class="product-list-list-wrapper-card-rate">
-      <p class="product-list-list-wrapper-card-rate-rate">
-        {{ product.rating }}
-      </p>
+      <div class="product-list-list-wrapper-card-rate-cont">
+        <app-rate [rate]="product.rating"></app-rate>
+        <p class="product-list-list-wrapper-card-rate-cont-rate">
+          {{ product.rating }}
+        </p>
+      </div>
       <button class="product-list-list-wrapper-card-rate-favorite">
         <span
           class="material-symbols-outlined product-list-list-wrapper-card-rate-favorite-icon"

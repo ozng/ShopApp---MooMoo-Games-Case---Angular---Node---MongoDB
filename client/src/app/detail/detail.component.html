@@ -20,8 +20,8 @@
 
       <div class="detail-right-rateandprice">
         <p class="detail-right-rateandprice-price">
-          {{ selectedProduct.price }}
-          <span class="detail-right-rateandprice-tl">TL</span>
+          {{ selectedProduct.price | currency : "₺" }}
+          <span class="detail-right-rateandprice-tl"></span>
         </p>
         <div class="detail-right-rateandprice-ratecont">
           <div class="detail-right-rateandprice-ratecont-rate">
@@ -55,7 +55,7 @@
                 {{ color.name | titlecase }}
               </p>
               <p class="detail-right-color-card-info-price">
-                {{ color.price }}
+                {{ color.price | currency : "₺" }}
               </p>
             </div>
           </div>
@@ -73,6 +73,13 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="detail-allinfo">
+    <h2 class="detail-allinfo-label">Tüm Özellikler</h2>
+    <span class="material-symbols-outlined detail-allinfo-icon">
+      expand_more
+    </span>
   </div>
 </div>
 <app-footer></app-footer>

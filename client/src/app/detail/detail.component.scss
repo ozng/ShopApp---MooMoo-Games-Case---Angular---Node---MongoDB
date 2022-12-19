@@ -205,4 +205,24 @@
       }
     }
   }
+
+  &-allinfo {
+    margin: 7.4rem 0 19.4rem 15rem;
+    font-family: "Montserrat";
+
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+
+    &-label {
+      text-decoration: underline;
+      font-weight: 700;
+      font-size: 3.2rem;
+    }
+
+    &-icon {
+      font-size: 3.2rem;
+      font-weight: 700;
+    }
+  }
 }

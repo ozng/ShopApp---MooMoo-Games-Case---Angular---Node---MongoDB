@@ -38,7 +38,7 @@ export class SideCategoryBarComponent {
 
     if (this.oldIndex === categoryIndex) {
       this.categories[categoryIndex].isShow = false;
-      this.oldIndex = -1;
+      this.oldIndex = -2;
       return;
     }
 

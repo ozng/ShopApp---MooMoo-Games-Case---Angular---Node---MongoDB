@@ -86,10 +86,10 @@
             class="side-category-bar-filter-show-filters-checkbar"
             id="{{ i }}"
             name="group1[]"
+            (click)="filterProducts(filter.id)"
           />
           <label
             for="{{ i }}"
-            (click)="filterProducts(filter.id)"
             class="side-category-bar-filter-show-filters-label"
             >{{ filter.label }}</label
           >

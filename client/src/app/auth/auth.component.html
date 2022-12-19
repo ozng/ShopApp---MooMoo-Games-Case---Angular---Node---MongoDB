@@ -5,15 +5,57 @@
 
   <div class="auth">
     <div class="auth-tab">
-      <div class="auth-tab-left">
-        <h1 class="login" class="auth-tab-left-title">Giriş Yap</h1>
+      <div
+        [ngClass]="{
+          'auth-tab-left-active': isLoginIn,
+          '': !isLoginIn
+        }"
+        class="auth-tab-left"
+      >
+        <h1
+          (click)="setStatusToLogin()"
+          class="login"
+          [ngClass]="{
+            'auth-tab-active': isLoginIn,
+            '': !isLoginIn
+          }"
+          class="auth-tab-left-title"
+        >
+          Giriş Yap
+        </h1>
       </div>
-      <div class="auth-tab-right">
-        <h1 class="register" class="auth-tab-right-title">Üye Ol</h1>
+      <div
+        [ngClass]="{
+          '': isLoginIn,
+          'auth-tab-right-active': !isLoginIn
+        }"
+        class="auth-tab-right"
+      >
+        <h1
+          (click)="setStatusToRegister()"
+          class="register"
+          [ngClass]="{
+            '': isLoginIn,
+            'auth-tab-active': !isLoginIn
+          }"
+          class="auth-tab-right-title"
+        >
+          Üye Ol
+        </h1>
       </div>
     </div>
     <div class="auth-card">
       <form action="{{ submitHandler() }}" class="auth-card-form">
+        <div class="auth-card-form-wrapper" *ngIf="!isLoginIn">
+          <label for="email" class="auth-card-form-wrapper-label"
+            >İsim Soyisim</label
+          >
+          <input
+            name="email"
+            type="text"
+            class="auth-card-form-wrapper-input"
+          />
+        </div>
         <div class="auth-card-form-wrapper">
           <label for="email" class="auth-card-form-wrapper-label"
             >E-Posta</label
@@ -31,16 +73,59 @@
           <input type="text" class="auth-card-form-wrapper-input" />
         </div>
 
-        <div class="auth-card-form-forget">
+        <div class="auth-card-form-password" *ngIf="!isLoginIn">
+          <span class="auth-card-form-password-info"
+            >Şifreniz en az 7 karakter ve en fazla 64 karakter olmalı, harf ve
+            rakam içermelidir.</span
+          >
+        </div>
+
+        <div class="auth-card-form-gender" *ngIf="!isLoginIn">
+          <h2 class="auth-card-form-gender-title">Cinsiyet (opsiyonel)</h2>
+          <div class="auth-card-form-gender-cont">
+            <p class="auth-card-form-gender-cont-label">Kadın</p>
+            <div class="auth-card-form-gender-cont-divider"></div>
+            <p class="auth-card-form-gender-cont-label">Erkek</p>
+          </div>
+        </div>
+
+        <div class="auth-card-form-forget" *ngIf="isLoginIn">
           <span class="auth-card-form-forget-password">Şifremi Unuttum</span>
         </div>
-        <button class="auth-card-form-btn" type="submit">GİRİŞ YAP</button>
+        <button class="auth-card-form-btn" type="submit" *ngIf="isLoginIn">
+          GİRİŞ YAP
+        </button>
+        <button class="auth-card-form-btn" type="submit" *ngIf="!isLoginIn">
+          ÜYE OL
+        </button>
       </form>
 
-      <div class="auth-divider"></div>
-      <h2 class="auth-social">Sosyal hesap ile giriş yap</h2>
+      <div class="auth-divider" *ngIf="isLoginIn"></div>
+      <h2 class="auth-social" *ngIf="isLoginIn">Sosyal hesap ile giriş yap</h2>
 
-      <div class="auth-socialicons">
+      <p class="auth-term" *ngIf="!isLoginIn">
+        Üye Ol’a basarak Üyelik Koşullarını kabul ediyorum.
+      </p>
+
+      <div class="auth-checks" *ngIf="!isLoginIn">
+        <div class="auth-checks-cont">
+          <input type="checkbox" name="first" id="first" />
+          <p class="auth-checks-cont-label">
+            Kampanyalardan haberdar olabilmem için kişisel verilerimin
+            işlenmesini ve tarafıma elektronik ileti gönderilmesini kabul
+            ediyorum.
+          </p>
+        </div>
+        <div class="auth-checks-cont">
+          <input type="checkbox" name="second" id="second" />
+          <p class="auth-checks-cont-label">
+            Kişisel verilerimin işlenmesine yönelik aydınlatma metnini okudum ve
+            anladım.
+          </p>
+        </div>
+      </div>
+
+      <div class="auth-socialicons" *ngIf="isLoginIn">
         <div class="auth-socialicons-card">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png"

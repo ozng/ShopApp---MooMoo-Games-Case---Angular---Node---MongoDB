@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./auth.component.scss'],
 })
 export class AuthComponent {
+  isLoginIn = true;
+
+  setStatusToLogin() {
+    this.isLoginIn = true;
+  }
+
+  setStatusToRegister() {
+    this.isLoginIn = false;
+  }
+
   submitHandler() {}
 }

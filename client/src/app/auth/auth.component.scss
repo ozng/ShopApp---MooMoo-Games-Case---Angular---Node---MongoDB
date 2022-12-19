@@ -1,0 +1,166 @@
+.auth {
+  margin: 15rem 0;
+
+  &-tab {
+    margin: 0 auto;
+    width: 45%;
+
+    display: flex;
+    justify-content: space-between;
+
+    &-left {
+      background-color: white;
+      border-radius: 5px 5px 0px 0px;
+      border-width: 1px 1px 0px 1px;
+      border-style: solid;
+      border-color: #d1d1d1;
+      width: 49%;
+
+      &-title {
+        font-weight: 700;
+        font-family: "Montserrat";
+        font-size: 1.5rem;
+        color: #2979ff;
+        text-align: center;
+        padding: 2rem 0;
+      }
+    }
+
+    &-right {
+      width: 49%;
+      background-color: #e7e7e7;
+      border-radius: 5px 5px 0px 0px;
+      border: 5px 5px 0 0;
+      border-color: #d1d1d1;
+      border-width: 1px;
+
+      &-title {
+        font-weight: 700;
+        font-family: "Montserrat";
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 2rem 0;
+      }
+    }
+  }
+
+  &-card {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    border-radius: 0px 0px 10px 10px;
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: #d1d1d1;
+
+    width: 45%;
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      padding: 10rem 5.8rem;
+
+      &-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        &:first-child {
+          margin-bottom: 5rem;
+        }
+
+        &-label {
+          font-family: "Montserrat";
+          font-weight: 700;
+          font-size: 1.8rem;
+
+          margin-bottom: 1.3rem;
+        }
+
+        &-input {
+          background-color: #f2f2f2;
+          border: 1px solid #c8c8c8;
+          border-radius: 1rem;
+
+          padding: 1.5rem 1rem;
+        }
+      }
+
+      &-forget {
+        display: flex;
+        justify-content: flex-end;
+
+        &-password {
+          margin-top: 1.1rem;
+          font-family: "Montserrat";
+          font-size: 1.5rem;
+          font-weight: 500;
+          cursor: pointer;
+        }
+      }
+
+      &-btn {
+        margin-top: 5.9rem;
+        background-color: #2979ff;
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+
+        padding: 2.1rem 9.2rem;
+        font-family: "Poppins";
+        font-weight: 700;
+        font-size: 2rem;
+
+        cursor: pointer;
+
+        align-self: center;
+      }
+    }
+  }
+
+  &-divider {
+    height: 0.1rem;
+    background-color: #b6b6b6;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &-social {
+    margin-top: 2.2rem;
+    margin-bottom: 5.1rem;
+    text-align: center;
+
+    font-size: 2rem;
+    font-family: "Montserrat";
+    font-weight: 400;
+  }
+
+  &-socialicons {
+    display: flex;
+    justify-content: space-around;
+
+    padding-bottom: 4.2rem;
+    &-card {
+      border: 1px solid #e3e3e3;
+      border-radius: 0.4rem;
+      padding: 1.1rem 1.8rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &-icon {
+        width: 3rem;
+        height: 3rem;
+        object-fit: contain;
+      }
+
+      &-label {
+        padding-left: 2.6rem;
+        padding-right: 3.1rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        font-family: "Montserrat";
+        text-align: center;
+        color: #878787;
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+<app-header></app-header>
+
+<div class="container">
+  <app-top-category-bar></app-top-category-bar>
+
+  <div class="auth">
+    <div class="auth-tab">
+      <div class="auth-tab-left">
+        <h1 class="login" class="auth-tab-left-title">Giriş Yap</h1>
+      </div>
+      <div class="auth-tab-right">
+        <h1 class="register" class="auth-tab-right-title">Üye Ol</h1>
+      </div>
+    </div>
+    <div class="auth-card">
+      <form action="{{ submitHandler() }}" class="auth-card-form">
+        <div class="auth-card-form-wrapper">
+          <label for="email" class="auth-card-form-wrapper-label"
+            >E-Posta</label
+          >
+          <input
+            name="email"
+            type="text"
+            class="auth-card-form-wrapper-input"
+          />
+        </div>
+        <div class="auth-card-form-wrapper">
+          <label for="password" class="auth-card-form-wrapper-label"
+            >Şifre</label
+          >
+          <input type="text" class="auth-card-form-wrapper-input" />
+        </div>
+
+        <div class="auth-card-form-forget">
+          <span class="auth-card-form-forget-password">Şifremi Unuttum</span>
+        </div>
+        <button class="auth-card-form-btn" type="submit">GİRİŞ YAP</button>
+      </form>
+
+      <div class="auth-divider"></div>
+      <h2 class="auth-social">Sosyal hesap ile giriş yap</h2>
+
+      <div class="auth-socialicons">
+        <div class="auth-socialicons-card">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png"
+            alt="social icon"
+            class="auth-socialicons-card-icon"
+          />
+          <div>
+            <p class="auth-socialicons-card-label">Google ile</p>
+            <p class="auth-socialicons-card-label">Giriş yap</p>
+          </div>
+        </div>
+
+        <div class="auth-socialicons-card">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+            alt="social icon"
+            class="auth-socialicons-card-icon"
+          />
+          <div>
+            <p class="auth-socialicons-card-label">Apple ile</p>
+            <p class="auth-socialicons-card-label">Giriş yap</p>
+          </div>
+        </div>
+
+        <div class="auth-socialicons-card">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png"
+            alt="social icon"
+            class="auth-socialicons-card-icon"
+          />
+          <div>
+            <p class="auth-socialicons-card-label">Facebook ile</p>
+            <p class="auth-socialicons-card-label">Giriş yap</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -15,6 +15,7 @@ import { productReducer } from './store/products/product.reducer';
 import { FooterComponent } from './common/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { DetailComponent } from './detail/detail.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DetailComponent } from './detail/detail.component';
     CategoryComponent,
     FooterComponent,
     DetailComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ProductService } from '../services/product.service';
-import { selectSelectedProduct } from '../store/products/product.selectors';
 import { setSelectedProduct } from '../store/products/product.actions';
 
 @Component({

@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductService } from '../../services/product.service';
-import { search } from 'src/app/store/products/product.actions';
-import { Store } from '@ngrx/store';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +7,7 @@ import { Store } from '@ngrx/store';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(private productService: ProductService, private store: Store) {}
+  constructor(private router: Router) {}
 
   searchText?: string;
 
@@ -20,15 +18,6 @@ export class HeaderComponent {
   }
 
   searchHandler() {
-    this.productService
-      .search(
-        this.searchText!.charAt(0).toUpperCase() + this.searchText!.slice(1)
-      )
-      .subscribe({
-        next: (response) => {
-          this.store.dispatch(search({ products: response }));
-          this.resetSearchInput();
-        },
-      });
+    this.router.navigate([`search/${this.searchText}`]);
   }
 }

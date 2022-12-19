@@ -16,6 +16,7 @@ import { FooterComponent } from './common/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { DetailComponent } from './detail/detail.component';
 import { AuthComponent } from './auth/auth.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AuthComponent } from './auth/auth.component';
     FooterComponent,
     DetailComponent,
     AuthComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

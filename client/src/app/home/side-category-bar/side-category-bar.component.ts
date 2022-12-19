@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { ProductService } from 'src/app/services/product.service';
 import {
-  getAllProduct,
   sortByPriceLow,
   sortByPriceHigh,
   sortByMostRated,
@@ -27,7 +25,7 @@ interface Categories {
   styleUrls: ['./side-category-bar.component.scss'],
 })
 export class SideCategoryBarComponent {
-  constructor(private productService: ProductService, private store: Store) {}
+  constructor(private store: Store) {}
 
   oldIndex: number = -1;
 
@@ -54,14 +52,6 @@ export class SideCategoryBarComponent {
 
   toggleFilter() {
     this.isFilterShow = !this.isFilterShow;
-  }
-
-  reFetchAllProducts() {
-    this.productService.getAllProducts().subscribe({
-      next: (response) => {
-        this.store.dispatch(getAllProduct({ products: response }));
-      },
-    });
   }
 
   filterProducts(id: number) {

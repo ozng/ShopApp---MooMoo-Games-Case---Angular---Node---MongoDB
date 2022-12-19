@@ -71,10 +71,7 @@
           class="product-list-list-wrapper-anchor"
           routerLink="detail/{{ product._id }}"
         >
-          <div
-            class="product-list-list-card"
-            (click)="setSelectedProduct(product)"
-          >
+          <div class="product-list-list-card">
             <img
               src="{{ product.imageUrl }}"
               alt="product picture"

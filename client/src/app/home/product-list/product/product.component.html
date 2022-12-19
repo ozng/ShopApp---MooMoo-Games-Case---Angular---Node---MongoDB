@@ -1,0 +1,31 @@
+<div class="product-list-list-wrapper">
+  <div
+    class="product-list-list-wrapper-card"
+    routerLink="detail/{{ product._id }}"
+  >
+    <img
+      src="{{ product.imageUrl }}"
+      alt="product picture"
+      class="product-list-list-wrapper-card-image"
+    />
+    <p class="product-list-list-wrapper-card-title">
+      {{ product.title }}
+    </p>
+    <p class="product-list-list-wrapper-card-price">${{ product.price }}</p>
+    <p class="product-list-list-wrapper-card-overview">
+      {{ product.overview }}
+    </p>
+    <div class="product-list-list-wrapper-card-rate">
+      <p class="product-list-list-wrapper-card-rate-rate">
+        {{ product.rating }}
+      </p>
+      <button class="product-list-list-wrapper-card-rate-favorite">
+        <span
+          class="material-symbols-outlined product-list-list-wrapper-card-rate-favorite-icon"
+        >
+          favorite </span
+        >Watch
+      </button>
+    </div>
+  </div>
+</div>

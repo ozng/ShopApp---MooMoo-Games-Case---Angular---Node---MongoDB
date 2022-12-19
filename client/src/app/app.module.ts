@@ -17,6 +17,8 @@ import { FormsModule } from '@angular/forms';
 import { DetailComponent } from './detail/detail.component';
 import { AuthComponent } from './auth/auth.component';
 import { SearchComponent } from './search/search.component';
+import { RateComponent } from './common/rate/rate.component';
+import { ProductComponent } from './home/product-list/product/product.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { SearchComponent } from './search/search.component';
     DetailComponent,
     AuthComponent,
     SearchComponent,
+    RateComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,

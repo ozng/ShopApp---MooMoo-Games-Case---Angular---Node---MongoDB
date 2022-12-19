@@ -60,7 +60,7 @@
       *ngIf="!isFilterShow"
       (click)="toggleFilter()"
     >
-      <span class="side-category-bar-filter-hide-label">Collapsed filters</span>
+      <span class="side-category-bar-filter-hide-label">Sort</span>
       <span
         class="material-symbols-outlined side-category-bar-filter-hide-icon"
       >
@@ -70,9 +70,7 @@
 
     <div class="side-category-bar-filter-show" *ngIf="isFilterShow">
       <div (click)="toggleFilter()" class="side-category-bar-filter-show-title">
-        <p class="side-category-bar-filter-show-title-label">
-          Expanded filters
-        </p>
+        <p class="side-category-bar-filter-show-title-label">Sort</p>
         <span
           class="material-symbols-outlined side-category-bar-filter-show-title-icon"
         >

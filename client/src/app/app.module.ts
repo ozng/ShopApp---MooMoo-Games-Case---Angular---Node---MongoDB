@@ -19,6 +19,7 @@ import { AuthComponent } from './auth/auth.component';
 import { SearchComponent } from './search/search.component';
 import { RateComponent } from './common/rate/rate.component';
 import { ProductComponent } from './home/product-list/product/product.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ProductComponent } from './home/product-list/product/product.component'
     HttpClientModule,
     StoreModule.forRoot({ products: productReducer }),
     FormsModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

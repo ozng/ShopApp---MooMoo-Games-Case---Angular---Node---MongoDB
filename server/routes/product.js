@@ -67,7 +67,6 @@ router.get("/get/:id", async (req, res) => {
 // Search Product
 router.get("/search/:text", async (req, res) => {
   const searchText = req.params.text;
-  console.log(searchText);
 
   try {
     const searchedProducts = await Product.find({

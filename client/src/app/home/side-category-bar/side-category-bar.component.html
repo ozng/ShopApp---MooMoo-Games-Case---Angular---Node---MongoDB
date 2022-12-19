@@ -10,14 +10,19 @@
     <div class="side-category-bar-categories-card">
       <div class="side-category-bar-categories-card-wrapper">
         <span
-          routerLink=""
+          (click)="reFetchAllProducts()"
           class="material-symbols-outlined side-category-bar-categories-card-wrapper-icon"
         >
           chevron_right
         </span>
         <p
+          [ngClass]="{
+            'side-category-bar-categories-card-wrapper-label-selected':
+              oldIndex === -1,
+            '': oldIndex !== -1
+          }"
           class="side-category-bar-categories-card-wrapper-label"
-          routerLink=""
+          (click)="reFetchAllProducts()"
         >
           All Products
         </p>

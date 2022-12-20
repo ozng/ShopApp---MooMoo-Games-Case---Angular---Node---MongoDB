@@ -17,6 +17,10 @@ export class HeaderComponent {
     this.searchText = '';
   }
 
+  navigateHandler() {
+    this.router.navigate(['cart']);
+  }
+
   searchHandler() {
     this.router.navigate([`search/${this.searchText}`]);
   }

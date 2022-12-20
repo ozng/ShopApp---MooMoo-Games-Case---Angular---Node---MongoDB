@@ -10,18 +10,11 @@ export const SORT_BY_RECENTLY_ADDED: string = 'SORT_BY_RECENTLY_ADDED';
 export const RECOMMENDED: string = 'RECOMMENDED';
 export const SEARCH: string = 'SEARCH';
 
-export const SET_SELECTED_PRODUCT: string = 'SET_SELECTED_PRODUCT';
-
 export const getAllProduct = createAction(GET_ALL, props<{ products: any }>());
 
 export const getCategoryProduct = createAction(
   GET_CATEGORY,
   props<{ products: any }>()
-);
-
-export const setSelectedProduct = createAction(
-  SET_SELECTED_PRODUCT,
-  props<{ selectedProduct: any }>()
 );
 
 export const search = createAction(SEARCH, props<{ products: any }>());

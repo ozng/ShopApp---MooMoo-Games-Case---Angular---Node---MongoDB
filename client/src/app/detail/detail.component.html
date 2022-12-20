@@ -64,12 +64,27 @@
 
       <div class="detail-right-btns">
         <div class="detail-right-btns-right">
-          <button class="detail-right-btns-right-decrease">-</button>
+          <button
+            (click)="handleQuantity('dec')"
+            class="detail-right-btns-right-decrease"
+          >
+            -
+          </button>
           <span class="detail-right-btns-right-quantity">{{ quantity }}</span>
-          <button class="detail-right-btns-right-increase">+</button>
+          <button
+            (click)="handleQuantity('inc')"
+            class="detail-right-btns-right-increase"
+          >
+            +
+          </button>
         </div>
         <div class="detail-right-btns-left">
-          <button class="detail-right-btns-left-btn">Sepete Ekle</button>
+          <button
+            (click)="handleAddToCart()"
+            class="detail-right-btns-left-btn"
+          >
+            Sepete Ekle
+          </button>
         </div>
       </div>
     </div>

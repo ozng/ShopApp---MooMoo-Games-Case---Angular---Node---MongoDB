@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-budget',
   templateUrl: './budget.component.html',
-  styleUrls: ['./budget.component.scss']
+  styleUrls: ['./budget.component.scss'],
 })
-export class BudgetComponent {
+export class BudgetComponent implements OnInit {
+  cartList: any = [];
 
+  async ngOnInit(): Promise<void> {
+    const resData = await localStorage.getItem('cart');
+
+    this.cartList = JSON.parse(resData!);
+
+    console.log(this.cartList);
+  }
 }

@@ -20,8 +20,12 @@
 
     &-list {
       &-card {
+        &:not(:last-child) {
+          margin-bottom: 3.8rem;
+        }
         &-top {
           display: flex;
+
           padding: 3.3rem 3rem;
           background-color: #fbfbfb;
           border: 0.1rem solid #d1d1d1;
@@ -63,13 +67,13 @@
         &-bottom {
           display: flex;
           align-items: center;
+          justify-content: space-between;
+          width: 100%;
 
           border: 0.1rem solid #d1d1d1;
           border-radius: 0px 0px 1rem 1rem;
 
           padding: 5.8rem 3rem;
-          &-box {
-          }
 
           &-img {
             width: 8.2rem;
@@ -161,6 +165,8 @@
 
           &-price {
             margin-left: 5.1rem;
+            margin-right: 6.1rem;
+            width: 10%;
             &-label {
               font-family: "Montserrat";
               font-weight: 700;

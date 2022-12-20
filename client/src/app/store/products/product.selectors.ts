@@ -5,9 +5,3 @@ export const selectAllProducts = createSelector(
   selectProduct,
   (state: any) => state.products
 );
-
-export const selectedProduct = (state: any) => state.selectedProduct;
-export const selectSelectedProduct = createSelector(
-  selectedProduct,
-  (state: any) => state.selectedProduct
-);

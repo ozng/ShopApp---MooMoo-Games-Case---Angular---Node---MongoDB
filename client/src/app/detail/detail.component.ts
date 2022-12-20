@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { ProductService } from '../services/product.service';
-import { setSelectedProduct } from '../store/products/product.actions';
 
 @Component({
   selector: 'app-detail',
@@ -15,19 +13,70 @@ export class DetailComponent implements OnInit {
   productId: string = '';
 
   constructor(
-    private store: Store,
     private activatedRoute: ActivatedRoute,
     private productService: ProductService
   ) {}
 
   quantity: number = 1;
 
+  handleAddToCart() {
+    const cartItem: any = {
+      quantity: this.quantity,
+      product: this.selectedProduct,
+    };
+
+    const cartLists = [];
+
+    const resDataCurrentCart = localStorage.getItem('cart');
+    const resData = JSON.parse(resDataCurrentCart!);
+
+    console.log(resData);
+
+    if (resData) {
+      const index = resData.findIndex(
+        (item: any) => item.product._id === cartItem.product._id
+      );
+      if (index === -1) {
+        resData.push(cartItem);
+        const jsonData = JSON.stringify(resData);
+        localStorage.setItem('cart', jsonData);
+      } else {
+        const updatedData = resData.map((obj: any) => {
+          if (obj.product._id === cartItem.product._id) {
+            return { ...obj, quantity: this.quantity };
+          }
+          return obj;
+        });
+
+        const jsonData = JSON.stringify(updatedData);
+        localStorage.setItem('cart', jsonData);
+      }
+    } else {
+      cartLists.push(cartItem);
+      const jsonDataTwo = JSON.stringify(cartLists);
+      localStorage.setItem('cart', jsonDataTwo);
+    }
+  }
+
+  handleQuantity(type: string) {
+    if (type === 'inc') {
+      if (this.quantity === this.selectedProduct.quantity) {
+        return;
+      }
+      this.quantity = this.quantity + 1;
+    } else if (type === 'dec') {
+      if (this.quantity === 1) {
+        return;
+      }
+      this.quantity = this.quantity - 1;
+    }
+  }
+
   ngOnInit(): void {
     this.productId = this.activatedRoute.snapshot.paramMap.get('id')!;
 
     this.productService.getProductByID(this.productId).subscribe({
       next: (response) => {
-        this.store.dispatch(setSelectedProduct({ selectedProduct: response }));
         this.selectedProduct = response;
       },
     });

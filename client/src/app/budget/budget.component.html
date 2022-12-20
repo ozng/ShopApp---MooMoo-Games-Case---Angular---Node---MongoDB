@@ -8,77 +8,80 @@
     <div class="budget-left">
       <h1 class="budget-left-title">Sepetim ( 2 Ürün )</h1>
       <div class="budget-left-list">
-        <div class="budget-left-list-card">
-          <div class="budget-left-list-card-top">
-            <input
-              checked
-              type="checkbox"
-              class="budget-left-list-card-top-box"
-            />
-            <div class="budget-left-list-card-top-box-saller">
-              <span class="budget-left-list-card-top-box-saller-head"
-                >Satıcı:
-              </span>
-              <span class="budget-left-list-card-top-box-saller-name"
-                >Hepsişurada</span
-              >
-              <span class="budget-left-list-card-top-box-saller-rate">9.1</span>
-            </div>
-          </div>
-
-          <div class="budget-left-list-card-bottom">
-            <input
-              checked
-              type="checkbox"
-              class="budget-left-list-card-bottom-box"
-            />
-            <img
-              src="https://s3-alpha-sig.figma.com/img/fa62/e901/582cf0db36faaa49f7e53d2ee099efc3?Expires=1672617600&Signature=P59Y0Ut9ehCRJalzvJc6FlBrUdOFU~Ps0JEdILT4gCxn-~DDgLYccnhkcZRaQYLtgHcUiQ8H6zidyCba7J2XMmqPxaZD27f3UafgTBKYN0ahwNmnVUjtQFnTdau6q~r~lPLSj6Ae~eKd5L3p~eF5Mq-3VDkQfXvlUMPr4oyZpLjG6NgFl8aMq2sv9ByC6SFWml4qlHOEl8hn7ZVRlz-38bECZzh7Qp3HbYzdjWCGLP8I6O1Hi~aiHNU6QfJMATF9w9k324ibmi0qRNz7xdubhgfOALrgqUxMmx9vrvAWiM~FKMlSmr595nLfVq1Nl46XzPcjFUgdGDR~f0PxLbr0Tw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
-              alt="product image"
-              class="budget-left-list-card-bottom-img"
-            />
-
-            <div class="budget-left-list-card-bottom-labels">
-              <div class="budget-left-list-card-bottom-labels-infos">
-                <span class="budget-left-list-card-bottom-labels-infos-saller"
+        <ng-container *ngFor="let cartProduct of cartList">
+          <div class="budget-left-list-card">
+            <div class="budget-left-list-card-top">
+              <input
+                checked
+                type="checkbox"
+                class="budget-left-list-card-top-box"
+              />
+              <div class="budget-left-list-card-top-box-saller">
+                <span class="budget-left-list-card-top-box-saller-head"
+                  >Satıcı:
+                </span>
+                <span class="budget-left-list-card-top-box-saller-name"
                   >Hepsişurada</span
                 >
-                <span class="budget-left-list-card-bottom-labels-infos-name"
-                  >Marlindo Airpods Pro Wireless Şarjlı Ios Androıd Uyumlu
-                  Bluetooth Kulaklık
-                </span>
-              </div>
-              <div class="budget-left-list-card-bottom-labels-rating">
-                <app-rate [rate]="4.5"></app-rate>
+                <span class="budget-left-list-card-top-box-saller-rate"
+                  >9.1</span
+                >
               </div>
             </div>
 
-            <div class="budget-left-list-card-bottom-btns">
-              <div class="budget-left-list-card-bottom-btns-decrement">
-                <span>-</span>
-              </div>
-              <div class="budget-left-list-card-bottom-btns-quantity">
-                <span>1</span>
-              </div>
-              <div class="budget-left-list-card-bottom-btns-increment">
-                <span>+</span>
-              </div>
-            </div>
+            <div class="budget-left-list-card-bottom">
+              <input
+                checked
+                type="checkbox"
+                class="budget-left-list-card-bottom-box"
+              />
+              <img
+                src="{{ cartProduct.product.imageUrl }}"
+                alt="product image"
+                class="budget-left-list-card-bottom-img"
+              />
 
-            <div class="budget-left-list-card-bottom-price">
-              <span class="budget-left-list-card-bottom-price-label"
-                >262,11 TL</span
-              >
-            </div>
+              <div class="budget-left-list-card-bottom-labels">
+                <div class="budget-left-list-card-bottom-labels-infos">
+                  <span class="budget-left-list-card-bottom-labels-infos-saller"
+                    >Hepsişurada</span
+                  >
+                  <span class="budget-left-list-card-bottom-labels-infos-name">
+                    {{ cartProduct.product.title }}
+                  </span>
+                </div>
+                <div class="budget-left-list-card-bottom-labels-rating">
+                  <app-rate [rate]="4.5"></app-rate>
+                </div>
+              </div>
 
-            <div class="budget-left-list-card-bottom-icon">
-              <i
-                class="fa fa-trash budget-left-list-card-bottom-icon-icon"
-                aria-hidden="true"
-              ></i>
+              <div class="budget-left-list-card-bottom-btns">
+                <div class="budget-left-list-card-bottom-btns-decrement">
+                  <span>-</span>
+                </div>
+                <div class="budget-left-list-card-bottom-btns-quantity">
+                  <span>{{ cartProduct.quantity }}</span>
+                </div>
+                <div class="budget-left-list-card-bottom-btns-increment">
+                  <span>+</span>
+                </div>
+              </div>
+
+              <div class="budget-left-list-card-bottom-price">
+                <span class="budget-left-list-card-bottom-price-label"
+                  >{{ cartProduct.product.price }} TL</span
+                >
+              </div>
+
+              <div class="budget-left-list-card-bottom-icon">
+                <i
+                  class="fa fa-trash budget-left-list-card-bottom-icon-icon"
+                  aria-hidden="true"
+                ></i>
+              </div>
             </div>
           </div>
-        </div>
+        </ng-container>
       </div>
 
       <div class="budget-left-recommended">

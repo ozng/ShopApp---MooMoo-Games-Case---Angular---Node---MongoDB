@@ -64,7 +64,7 @@
 
   <div class="header-user">
     <button routerLink="/auth/login" class="header-user-signin">Sign in</button>
-    <button routerLink="cart" class="header-user-cart">
+    <button (click)="navigateHandler()" class="header-user-cart">
       My cart <span class="header-user-cart-badge">5</span>
     </button>
     <img

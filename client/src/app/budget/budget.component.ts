@@ -8,11 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class BudgetComponent implements OnInit {
   cartList: any = [];
 
-  async ngOnInit(): Promise<void> {
-    const resData = await localStorage.getItem('cart');
+  totalProductPrice: number = 0;
+  transportCost: number = 35;
+  totalAmount: number = 0;
 
-    this.cartList = JSON.parse(resData!);
+  ngOnInit(): void {
+    const resData = localStorage.getItem('cart');
 
-    console.log(this.cartList);
+    const cartData = JSON.parse(resData!);
+
+    this.cartList = cartData;
+
+    cartData.forEach((item: any) => {
+      this.totalProductPrice += item.quantity * item.product.price;
+    });
+
+    this.totalAmount = this.totalProductPrice + this.transportCost;
   }
 }

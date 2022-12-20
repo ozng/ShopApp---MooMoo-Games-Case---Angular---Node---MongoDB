@@ -87,9 +87,12 @@
 
           &-labels {
             margin-left: 3.7rem;
+            width: 50%;
+
             &-infos {
               font-family: "Montserrat";
               font-size: 1.5rem;
+
               &-saller {
                 font-weight: 600;
               }
@@ -181,6 +184,7 @@
 
             &-icon {
               font-size: 2.2rem;
+              cursor: pointer;
             }
           }
         }

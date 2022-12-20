@@ -51,7 +51,7 @@
                   </span>
                 </div>
                 <div class="budget-left-list-card-bottom-labels-rating">
-                  <app-rate [rate]="4.5"></app-rate>
+                  <app-rate [rate]="cartProduct.product.rating"></app-rate>
                 </div>
               </div>
 
@@ -69,7 +69,7 @@
 
               <div class="budget-left-list-card-bottom-price">
                 <span class="budget-left-list-card-bottom-price-label"
-                  >{{ cartProduct.product.price }} TL</span
+                  >{{ cartProduct.product.price | currency : " " }} TL</span
                 >
               </div>
 
@@ -108,20 +108,26 @@
             <span class="budget-right-card-summary-cont-label"
               >Ürünün Toplamı</span
             >
-            <span class="budget-right-card-summary-cont-price">262.00 TL</span>
+            <span class="budget-right-card-summary-cont-price"
+              >{{ totalProductPrice | currency : " " }} TL</span
+            >
           </div>
           <div class="budget-right-card-summary-cont">
             <span class="budget-right-card-summary-cont-label"
               >Kargo Toplamı</span
             >
-            <span class="budget-right-card-summary-cont-price">38.00 TL</span>
+            <span class="budget-right-card-summary-cont-price"
+              >{{ transportCost | currency : " " }} TL</span
+            >
           </div>
         </div>
 
         <div class="budget-right-card-summary-divider"></div>
 
         <div class="budget-right-card-summary-total">
-          <span class="budget-right-card-summary-total-amount">300.00 TL</span>
+          <span class="budget-right-card-summary-total-amount"
+            >{{ totalAmount | currency : " " }} TL</span
+          >
         </div>
       </div>
 

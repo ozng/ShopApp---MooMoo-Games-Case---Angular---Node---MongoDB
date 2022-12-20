@@ -8,8 +8,6 @@ const productRoute = require("./routes/product.js");
 const userRoute = require("./routes/user.js");
 const orderRoute = require("./routes/order.js");
 
-const authMiddleware = require("./routes/auth.js");
-
 const app = express();
 
 const PORT = 8800;
@@ -33,7 +31,7 @@ app.use(helmet());
 
 app.use("/api/product", productRoute);
 app.use("/api/user", userRoute);
-app.use("/api/order", authMiddleware, orderRoute);
+app.use("/api/order", orderRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);

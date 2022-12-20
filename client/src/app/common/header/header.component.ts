@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,9 @@ export class HeaderComponent implements OnInit {
 
   cartProductLength?: any;
 
-  constructor(private router: Router, private store: Store) {}
+  user?: any;
+
+  constructor(private router: Router, private authService: AuthService) {}
 
   resetSearchInput() {
     this.searchText = '';
@@ -26,10 +29,19 @@ export class HeaderComponent implements OnInit {
     this.router.navigate([`search/${this.searchText}`]);
   }
 
+  logoutHandler() {
+    this.authService.deleteUserFromLS();
+    this.router.navigate(['auth/login']);
+  }
+
   ngOnInit(): void {
     const resData = localStorage.getItem('cart');
 
     const cartItems = JSON.parse(resData!);
+
+    this.user = this.authService.getUser();
+
+    console.log(this.user);
 
     this.cartProductLength = cartItems.length;
   }

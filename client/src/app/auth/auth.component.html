@@ -45,13 +45,14 @@
       </div>
     </div>
     <div class="auth-card">
-      <form action="{{ submitHandler() }}" class="auth-card-form">
+      <form (submit)="submitHandler()" class="auth-card-form">
         <div class="auth-card-form-wrapper" *ngIf="!isLoginIn">
           <label for="email" class="auth-card-form-wrapper-label"
             >İsim Soyisim</label
           >
           <input
-            name="email"
+            [(ngModel)]="name"
+            name="name"
             type="text"
             class="auth-card-form-wrapper-input"
           />
@@ -61,6 +62,7 @@
             >E-Posta</label
           >
           <input
+            [(ngModel)]="email"
             name="email"
             type="text"
             class="auth-card-form-wrapper-input"
@@ -70,7 +72,12 @@
           <label for="password" class="auth-card-form-wrapper-label"
             >Şifre</label
           >
-          <input type="text" class="auth-card-form-wrapper-input" />
+          <input
+            [(ngModel)]="password"
+            name="password"
+            type="password"
+            class="auth-card-form-wrapper-input"
+          />
         </div>
 
         <div class="auth-card-form-password" *ngIf="!isLoginIn">
@@ -83,9 +90,27 @@
         <div class="auth-card-form-gender" *ngIf="!isLoginIn">
           <h2 class="auth-card-form-gender-title">Cinsiyet (opsiyonel)</h2>
           <div class="auth-card-form-gender-cont">
-            <p class="auth-card-form-gender-cont-label">Kadın</p>
+            <p
+              [ngClass]="{
+                'auth-card-form-gender-cont-label-selected': gender === 'f',
+                'auth-card-form-gender-cont-label': !isLoginIn
+              }"
+              (click)="setGender('f')"
+              class="auth-card-form-gender-cont-label"
+            >
+              Kadın
+            </p>
             <div class="auth-card-form-gender-cont-divider"></div>
-            <p class="auth-card-form-gender-cont-label">Erkek</p>
+            <p
+              [ngClass]="{
+                'auth-card-form-gender-cont-label-selected': gender === 'm',
+                'auth-card-form-gender-cont-label': !isLoginIn
+              }"
+              (click)="setGender('m')"
+              class="auth-card-form-gender-cont-label"
+            >
+              Erkek
+            </p>
           </div>
         </div>
 

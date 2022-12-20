@@ -20,6 +20,8 @@ import { SearchComponent } from './search/search.component';
 import { RateComponent } from './common/rate/rate.component';
 import { ProductComponent } from './home/product-list/product/product.component';
 import { RouterModule } from '@angular/router';
+import { BudgetComponent } from './budget/budget.component';
+import { MobilecardComponent } from './budget/mobilecard/mobilecard.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { RouterModule } from '@angular/router';
     SearchComponent,
     RateComponent,
     ProductComponent,
+    BudgetComponent,
+    MobilecardComponent,
   ],
   imports: [
     BrowserModule,

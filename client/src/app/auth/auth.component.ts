@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -9,7 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 export class AuthComponent implements OnInit {
   isLoginIn = true;
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+  }
 
   loginOrRegister: any = this.activatedRoute.snapshot.paramMap.get('type');
 

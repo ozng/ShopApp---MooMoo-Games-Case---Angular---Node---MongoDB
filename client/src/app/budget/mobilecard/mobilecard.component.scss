@@ -1,0 +1,67 @@
+.budget-left-recommended-list-card {
+  width: 12rem;
+  height: 23rem;
+  padding: 1rem 0;
+
+  &-img {
+    width: 12rem;
+    object-fit: contain;
+  }
+
+  &-title {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 1rem;
+
+    height: 25%;
+
+    cursor: pointer;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  &-price {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 2rem;
+    height: 16%;
+  }
+
+  &-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-cont {
+      display: flex;
+      align-items: center;
+      &-rate {
+        font-family: "Montserrat";
+        font-weight: 500;
+        font-size: 1.4rem;
+        color: #5e6366;
+      }
+    }
+
+    &-favorite {
+      border: 0.1rem solid #b4b4bb;
+      border-radius: 0.4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 0.3rem;
+
+      cursor: pointer;
+
+      &-icon {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

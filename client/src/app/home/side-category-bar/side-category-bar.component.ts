@@ -65,6 +65,7 @@ export class SideCategoryBarComponent {
 
     this.categories.forEach((item) => (item.isShow = false));
     this.oldIndex = -1;
+    this.isFilterShow = false;
   }
 
   filterProducts(id: number) {

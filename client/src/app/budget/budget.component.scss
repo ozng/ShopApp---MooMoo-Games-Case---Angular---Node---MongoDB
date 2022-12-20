@@ -1,0 +1,289 @@
+.budget {
+  display: flex;
+
+  gap: 10.6rem;
+
+  &-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-left {
+    width: 80%;
+
+    &-title {
+      font-family: "Inter";
+      font-size: 2.4rem;
+      font-weight: 400;
+      margin: 10.7rem 0 4rem 0;
+    }
+
+    &-list {
+      &-card {
+        &-top {
+          display: flex;
+          padding: 3.3rem 3rem;
+          background-color: #fbfbfb;
+          border: 0.1rem solid #d1d1d1;
+          border-radius: 1rem 1rem 0px 0px;
+
+          &-box {
+            &-saller {
+              padding-left: 7.2rem;
+
+              &-head {
+                font-family: "Montserrat";
+                font-weight: 700;
+                font-size: 1.5rem;
+                color: #a9a9a9;
+              }
+
+              &-name {
+                font-family: "Montserrat";
+                font-weight: 800;
+                font-size: 1.5rem;
+              }
+
+              &-rate {
+                margin-left: 2.3rem;
+                font-family: "Montserrat";
+                font-weight: 700;
+                font-size: 1.2rem;
+                border-radius: 0.3rem;
+
+                padding: 0.1rem 0.8rem;
+
+                background-color: #008e17;
+                color: white;
+              }
+            }
+          }
+        }
+
+        &-bottom {
+          display: flex;
+          align-items: center;
+
+          border: 0.1rem solid #d1d1d1;
+          border-radius: 0px 0px 1rem 1rem;
+
+          padding: 5.8rem 3rem;
+          &-box {
+          }
+
+          &-img {
+            width: 8.2rem;
+            height: 10.2rem;
+            object-fit: contain;
+
+            margin-left: 7.2rem;
+            padding: 1.8rem 0.8rem;
+            border: 1px solid #d1d1d1;
+          }
+
+          &-labels {
+            margin-left: 3.7rem;
+            &-infos {
+              font-family: "Montserrat";
+              font-size: 1.5rem;
+              &-saller {
+                font-weight: 600;
+              }
+
+              &-name {
+                margin-left: 0.5rem;
+                font-weight: 500;
+              }
+            }
+
+            &-rating {
+              margin-top: 1.4rem;
+            }
+          }
+
+          &-btns {
+            margin-left: 6.8rem;
+            border-radius: 1rem;
+            display: flex;
+
+            &-decrement {
+              width: 2.2rem;
+              height: 2.5rem;
+              background-color: #f8f8f8;
+              font-family: "Roboto";
+              border-radius: 0.3rem 0 0 0.3rem;
+              border: 0.5px solid #d1d1d1;
+
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              span {
+                font-size: 1.5rem;
+                font-weight: 400;
+                text-align: center;
+              }
+
+              cursor: pointer;
+            }
+            &-quantity {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              background-color: #ffffff;
+              border-width: 0.5px 0px;
+              border-style: solid;
+              border-color: #d1d1d1;
+
+              span {
+                font-size: 1.5rem;
+                padding: 0.3rem 1.2rem;
+              }
+            }
+            &-increment {
+              width: 2.2rem;
+              height: 2.5rem;
+              background-color: #f8f8f8;
+              border-radius: 0 0.3rem 0.3rem 0;
+              border: 0.5px solid #d1d1d1;
+
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              span {
+                font-size: 1.5rem;
+                font-weight: 400;
+                text-align: center;
+              }
+              cursor: pointer;
+            }
+          }
+
+          &-price {
+            margin-left: 5.1rem;
+            &-label {
+              font-family: "Montserrat";
+              font-weight: 700;
+              font-size: 1.7rem;
+            }
+          }
+
+          &-icon {
+            display: flex;
+            justify-content: flex-end;
+            flex-grow: 1;
+
+            &-icon {
+              font-size: 2.2rem;
+            }
+          }
+        }
+      }
+    }
+
+    &-recommended {
+      margin-top: 4.8rem;
+      &-title {
+        font-family: "Montserrat";
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: #2979ff;
+      }
+
+      &-divider {
+        height: 0.1rem;
+        background-color: #000000;
+        margin-top: 1.6rem;
+        margin-bottom: 1rem;
+      }
+
+      &-list {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &-right {
+    margin-top: 17.4rem;
+    width: 20%;
+    &-card {
+      border: 0.1rem solid #d1d1d1;
+      border-radius: 1rem;
+      padding: 2rem 1.6rem 4.1rem 1.6rem;
+
+      &-title {
+        font-family: "Montserrat";
+        font-weight: 500;
+        font-size: 1.5rem;
+        margin-bottom: 3.4rem;
+      }
+
+      &-summary {
+        &-cont {
+          display: flex;
+          justify-content: space-between;
+
+          &:not(:last-child) {
+            margin-bottom: 0.5rem;
+          }
+
+          &-label {
+            font-family: "Montserrat";
+            font-weight: 500;
+            font-size: 1.3rem;
+          }
+
+          &-price {
+            font-family: "Montserrat";
+            font-weight: 700;
+            font-size: 1.3rem;
+          }
+        }
+
+        &-divider {
+          height: 0.1rem;
+          background-color: #000000;
+          margin-top: 3.2rem;
+          margin-bottom: 1.9rem;
+        }
+
+        &-total {
+          display: flex;
+          justify-content: flex-end;
+
+          &-amount {
+            font-family: "Montserrat";
+            font-weight: 700;
+            font-size: 1.7rem;
+            color: #2979ff;
+          }
+        }
+      }
+    }
+
+    &-btns {
+      display: flex;
+      justify-content: center;
+
+      &-btn {
+        width: 100%;
+        font-family: "Montserrat";
+        font-weight: 800;
+        font-size: 1.7rem;
+
+        margin-top: 3rem;
+
+        padding: 1.9rem 0;
+
+        border: none;
+        border-radius: 1rem;
+
+        cursor: pointer;
+
+        background-color: #2979ff;
+        color: white;
+      }
+    }
+  }
+}

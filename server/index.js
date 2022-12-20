@@ -6,6 +6,7 @@ const cors = require("cors");
 
 const productRoute = require("./routes/product.js");
 const userRoute = require("./routes/user.js");
+const orderRoute = require("./routes/order.js");
 
 const authMiddleware = require("./routes/auth.js");
 
@@ -32,6 +33,7 @@ app.use(helmet());
 
 app.use("/api/product", productRoute);
 app.use("/api/user", userRoute);
+app.use("/api/order", authMiddleware, orderRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);

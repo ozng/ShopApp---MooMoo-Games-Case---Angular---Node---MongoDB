@@ -7,6 +7,8 @@ const cors = require("cors");
 const productRoute = require("./routes/product.js");
 const userRoute = require("./routes/user.js");
 
+const authMiddleware = require("./routes/auth.js");
+
 const app = express();
 
 const PORT = 8800;

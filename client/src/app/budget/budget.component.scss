@@ -1,5 +1,6 @@
 .budget {
   display: flex;
+  width: 60%;
 
   gap: 10.6rem;
 
@@ -10,6 +11,8 @@
 
   &-left {
     width: 80%;
+    min-width: 80%;
+    max-width: 80%;
 
     &-title {
       font-family: "Inter";
@@ -217,6 +220,9 @@
   &-right {
     margin-top: 17.4rem;
     width: 20%;
+    min-width: 20%;
+    max-width: 20%;
+
     &-card {
       border: 0.1rem solid #d1d1d1;
       border-radius: 1rem;

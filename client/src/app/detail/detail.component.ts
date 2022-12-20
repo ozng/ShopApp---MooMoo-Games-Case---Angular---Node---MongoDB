@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -14,7 +14,8 @@ export class DetailComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private router: Router
   ) {}
 
   quantity: number = 1;
@@ -29,8 +30,6 @@ export class DetailComponent implements OnInit {
 
     const resDataCurrentCart = localStorage.getItem('cart');
     const resData = JSON.parse(resDataCurrentCart!);
-
-    console.log(resData);
 
     if (resData) {
       const index = resData.findIndex(
@@ -56,6 +55,8 @@ export class DetailComponent implements OnInit {
       const jsonDataTwo = JSON.stringify(cartLists);
       localStorage.setItem('cart', jsonDataTwo);
     }
+
+    this.router.navigate(['cart']);
   }
 
   handleQuantity(type: string) {
@@ -80,7 +81,5 @@ export class DetailComponent implements OnInit {
         this.selectedProduct = response;
       },
     });
-
-    console.log(this.productId);
   }
 }

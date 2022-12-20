@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
-  constructor(private router: Router) {}
-
+export class HeaderComponent implements OnInit {
   searchText?: string;
 
-  searchedProduct = [];
+  cartProductLength?: any;
+
+  constructor(private router: Router, private store: Store) {}
 
   resetSearchInput() {
     this.searchText = '';
@@ -23,5 +24,13 @@ export class HeaderComponent {
 
   searchHandler() {
     this.router.navigate([`search/${this.searchText}`]);
+  }
+
+  ngOnInit(): void {
+    const resData = localStorage.getItem('cart');
+
+    const cartItems = JSON.parse(resData!);
+
+    this.cartProductLength = cartItems.length;
   }
 }

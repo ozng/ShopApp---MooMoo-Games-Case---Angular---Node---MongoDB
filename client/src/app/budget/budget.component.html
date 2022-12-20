@@ -6,7 +6,7 @@
 <div class="budget-container">
   <div class="budget">
     <div class="budget-left">
-      <h1 class="budget-left-title">Sepetim ( 2 Ürün )</h1>
+      <h1 class="budget-left-title">Sepetim ( {{ cartList.length }} Ürün )</h1>
       <div class="budget-left-list">
         <ng-container *ngFor="let cartProduct of cartList">
           <div class="budget-left-list-card">
@@ -56,13 +56,19 @@
               </div>
 
               <div class="budget-left-list-card-bottom-btns">
-                <div class="budget-left-list-card-bottom-btns-decrement">
+                <div
+                  (click)="quantityChangeHandler(cartProduct.product._id, '')"
+                  class="budget-left-list-card-bottom-btns-decrement"
+                >
                   <span>-</span>
                 </div>
                 <div class="budget-left-list-card-bottom-btns-quantity">
                   <span>{{ cartProduct.quantity }}</span>
                 </div>
-                <div class="budget-left-list-card-bottom-btns-increment">
+                <div
+                  (click)="quantityChangeHandler(cartProduct.product._id, 'i')"
+                  class="budget-left-list-card-bottom-btns-increment"
+                >
                   <span>+</span>
                 </div>
               </div>
@@ -73,7 +79,10 @@
                 >
               </div>
 
-              <div class="budget-left-list-card-bottom-icon">
+              <div
+                (click)="deleteFromCartHandler(cartProduct.product._id)"
+                class="budget-left-list-card-bottom-icon"
+              >
                 <i
                   class="fa fa-trash budget-left-list-card-bottom-icon-icon"
                   aria-hidden="true"

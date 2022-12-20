@@ -4,7 +4,8 @@ const helmet = require("helmet");
 const dotenv = require("dotenv");
 const cors = require("cors");
 
-const productRoute = require("./routes/product");
+const productRoute = require("./routes/product.js");
+const userRoute = require("./routes/user.js");
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(express.json());
 app.use(helmet());
 
 app.use("/api/product", productRoute);
+app.use("/api/user", userRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);

@@ -56,20 +56,26 @@
               </div>
 
               <div class="budget-left-list-card-bottom-btns">
-                <div
-                  (click)="quantityChangeHandler(cartProduct.product._id, '')"
-                  class="budget-left-list-card-bottom-btns-decrement"
-                >
-                  <span>-</span>
+                <div class="budget-left-list-card-bottom-btns-decrement">
+                  <button
+                    (click)="quantityChangeHandler(cartProduct.product._id, '')"
+                    class="budget-left-list-card-bottom-btns-decrement-btn"
+                  >
+                    -
+                  </button>
                 </div>
                 <div class="budget-left-list-card-bottom-btns-quantity">
                   <span>{{ cartProduct.quantity }}</span>
                 </div>
-                <div
-                  (click)="quantityChangeHandler(cartProduct.product._id, 'i')"
-                  class="budget-left-list-card-bottom-btns-increment"
-                >
-                  <span>+</span>
+                <div class="budget-left-list-card-bottom-btns-increment">
+                  <button
+                    (click)="
+                      quantityChangeHandler(cartProduct.product._id, 'i')
+                    "
+                    class="budget-left-list-card-bottom-btns-increment-btn"
+                  >
+                    +
+                  </button>
                 </div>
               </div>
 

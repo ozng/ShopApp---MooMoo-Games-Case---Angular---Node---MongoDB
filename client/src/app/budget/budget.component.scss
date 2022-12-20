@@ -117,23 +117,25 @@
             display: flex;
 
             &-decrement {
-              width: 2.2rem;
-              height: 2.5rem;
-              background-color: #f8f8f8;
-              font-family: "Roboto";
-              border-radius: 0.3rem 0 0 0.3rem;
-              border: 0.5px solid #d1d1d1;
-
               display: flex;
               align-items: center;
               justify-content: center;
+
+              &-btn {
+                width: 2.2rem;
+                height: 2.5rem;
+                background-color: #f8f8f8;
+                font-family: "Roboto";
+                border-radius: 0.3rem 0 0 0.3rem;
+                border: 0.5px solid #d1d1d1;
+                cursor: pointer;
+              }
+
               span {
                 font-size: 1.5rem;
                 font-weight: 400;
                 text-align: center;
               }
-
-              cursor: pointer;
             }
             &-quantity {
               display: flex;
@@ -151,21 +153,24 @@
               }
             }
             &-increment {
-              width: 2.2rem;
-              height: 2.5rem;
-              background-color: #f8f8f8;
-              border-radius: 0 0.3rem 0.3rem 0;
-              border: 0.5px solid #d1d1d1;
-
               display: flex;
               align-items: center;
               justify-content: center;
+
+              &-btn {
+                width: 2.2rem;
+                height: 2.5rem;
+                background-color: #f8f8f8;
+                border-radius: 0 0.3rem 0.3rem 0;
+                border: 0.5px solid #d1d1d1;
+                cursor: pointer;
+              }
+
               span {
                 font-size: 1.5rem;
                 font-weight: 400;
                 text-align: center;
               }
-              cursor: pointer;
             }
           }
 

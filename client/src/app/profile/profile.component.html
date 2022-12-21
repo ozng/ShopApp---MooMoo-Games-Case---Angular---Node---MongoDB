@@ -38,23 +38,23 @@
           class="profile-form-cont-input"
         />
       </div>
-      <div class="profile-form-gender-cont">
+      <div class="profile-form-genderCont">
         <p
           [ngClass]="{
-            'profile-form-gender-cont-label-selected': gender === 'f'
+            'profile-form-genderCont-label-selected': gender === 'f'
           }"
           (click)="setGender('f')"
-          class="profile-form-gender-cont-label"
+          class="profile-form-genderCont-label"
         >
           Kadın
         </p>
-        <div class="profile-form-gender-cont-divider"></div>
+        <div class="profile-form-genderCont-divider"></div>
         <p
           [ngClass]="{
-            'profile-form-gender-cont-label-selected': gender === 'm'
+            'profile-form-genderCont-label-selected': gender === 'm'
           }"
           (click)="setGender('m')"
-          class="profile-form-gender-cont-label"
+          class="profile-form-genderCont-label"
         >
           Erkek
         </p>

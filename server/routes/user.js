@@ -92,4 +92,30 @@ router.put("/favorite/:userID/:productID", async (req, res) => {
   }
 });
 
+// Get User Favorites
+
+router.get("/get_favorite/:userID", async (req, res) => {
+  const userID = req.params.userID;
+
+  try {
+    const user = await User.findById(userID);
+
+    const userFavoritesProductIDs = user.favorites;
+
+    const userFavorites = [];
+
+    for (let index = 0; index < userFavoritesProductIDs.length; index++) {
+      const product = await Product.findById(userFavoritesProductIDs[index]);
+
+      userFavorites.push(product);
+    }
+
+    res.status(200).json(userFavorites);
+  } catch (err) {
+    res.status(500).json({
+      error: err.message,
+    });
+  }
+});
+
 module.exports = router;

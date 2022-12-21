@@ -69,9 +69,9 @@ router.post("/login", async (req, res) => {
 
 // Add favorite
 
-router.put("/favorite/:userID/:productID", async (req, res) => {
+router.put("/favorite/:userID", async (req, res) => {
   const userID = req.params.userID;
-  const productID = req.params.productID;
+  const productID = req.body.productID;
 
   try {
     const user = await User.findById(userID);
@@ -114,6 +114,27 @@ router.get("/get_favorite/:userID", async (req, res) => {
   } catch (err) {
     res.status(500).json({
       error: err.message,
+    });
+  }
+});
+
+// IsFavorite
+
+router.get("/is_favorite/:userID/:productID", async (req, res) => {
+  const userID = req.params.userID;
+  const productID = req.params.productID;
+
+  try {
+    const user = await User.findById(userID);
+
+    const userFavorites = user.favorites;
+
+    const isFavorite = userFavorites.includes(productID);
+
+    res.status(200).json(isFavorite);
+  } catch (error) {
+    res.status(500).json({
+      message: err.message,
     });
   }
 });

@@ -41,6 +41,10 @@
       -webkit-line-clamp: 3; /* number of lines to show */
       line-clamp: 3;
       -webkit-box-orient: vertical;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     &-price {
@@ -90,6 +94,7 @@
         &-icon {
           font-size: 1.4rem;
           margin-right: 0.7rem;
+          color: #2264d1;
         }
       }
     }

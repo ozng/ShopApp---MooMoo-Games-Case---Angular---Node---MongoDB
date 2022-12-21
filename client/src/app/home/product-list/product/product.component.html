@@ -1,11 +1,14 @@
 <div class="product-list-list-wrapper">
-  <a class="product-list-list-wrapper-card" (click)="navigateToDetailHandler()">
+  <a class="product-list-list-wrapper-card">
     <img
       src="{{ product.imageUrl }}"
       alt="product picture"
       class="product-list-list-wrapper-card-image"
     />
-    <p class="product-list-list-wrapper-card-title">
+    <p
+      (click)="navigateToDetailHandler()"
+      class="product-list-list-wrapper-card-title"
+    >
       {{ product.title }}
     </p>
     <p class="product-list-list-wrapper-card-price">
@@ -21,12 +24,19 @@
           {{ product.rating }}
         </p>
       </div>
-      <button class="product-list-list-wrapper-card-rate-favorite">
-        <span
-          class="material-symbols-outlined product-list-list-wrapper-card-rate-favorite-icon"
-        >
-          favorite </span
-        >Watch
+      <button
+        (click)="toggleFavorite()"
+        class="product-list-list-wrapper-card-rate-favorite"
+      >
+        <i
+          [ngClass]="{
+            'fa-heart-o': !isFavorite,
+            'fa-heart': isFavorite
+          }"
+          class="fa fa-heart product-list-list-wrapper-card-rate-favorite-icon"
+          aria-hidden="true"
+        ></i>
+        Watch
       </button>
     </div>
   </a>

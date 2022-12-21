@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -9,19 +10,27 @@ import { Router } from '@angular/router';
 export class ProductComponent implements OnInit {
   @Input() product: any;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private productService: ProductService) {}
 
   navigateToDetailHandler() {
     this.router.navigate([`/detail/${this.product._id}`]);
   }
 
-  totalStar: any = [];
+  isFavorite?: any;
+
+  toggleFavorite() {
+    this.productService.addRemoveFavorite(this.product._id).subscribe({
+      next: () => {
+        this.isFavorite = !this.isFavorite;
+      },
+    });
+  }
 
   ngOnInit(): void {
-    for (let index = 0; index < this.product.rating; index++) {
-      this.totalStar.push(index);
-    }
-
-    this.totalStar.pop();
+    this.productService.isFavorite(this.product._id).subscribe({
+      next: (response) => {
+        this.isFavorite = response;
+      },
+    });
   }
 }

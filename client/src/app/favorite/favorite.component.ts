@@ -16,8 +16,6 @@ export class FavoriteComponent implements OnInit {
     this.productService.getUserFavoriteProducts().subscribe({
       next: (response) => {
         this.favoriteProducts = response;
-
-        console.log(response);
       },
     });
   }

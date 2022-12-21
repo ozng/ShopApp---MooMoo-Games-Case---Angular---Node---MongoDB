@@ -35,8 +35,6 @@ export class HeaderComponent implements OnInit {
 
     this.user = this.authService.getUser();
 
-    console.log(this.user);
-
     this.cartProductLength = cartItems.length;
   }
 }

@@ -22,7 +22,6 @@ export class ProductService {
   }
 
   search(text: string): Observable<ProductData> {
-    console.log(text);
     return this.http.get<ProductData>(
       `${environment.apiUrl}/product/search/${text}`
     );

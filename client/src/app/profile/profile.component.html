@@ -1,1 +1,74 @@
-<p>profile works!</p>
+<app-header></app-header>
+<div class="container">
+  <app-top-category-bar></app-top-category-bar>
+
+  <div class="profile">
+    <h2 class="profile-title">Üyelik Bilgilerim</h2>
+    <div class="profile-imgCont">
+      <img src="{{ user.imageUrl }}" alt="" class="profile-imgCont-img" />
+      <p class="profile-imgCont-date">
+        {{ user.createdAt | date : "full" : "+0200" : "tr" }} tarihinden beri
+        üye
+      </p>
+    </div>
+    <form (submit)="formSubmitHandler()" class="profile-form">
+      <div class="profile-form-cont">
+        <label for="name" class="profile-form-cont-label">İsim Soyisim</label>
+        <input
+          [(ngModel)]="user.username"
+          name="name"
+          type="text"
+          class="profile-form-cont-input"
+        />
+      </div>
+      <div class="profile-form-cont">
+        <label for="email" class="profile-form-cont-label">E-posta</label>
+        <input
+          [(ngModel)]="user.email"
+          name="email"
+          type="text"
+          class="profile-form-cont-input"
+        />
+      </div>
+      <div class="profile-form-cont">
+        <label for="password" class="profile-form-cont-label">Şifre</label>
+        <input
+          name="password"
+          type="password"
+          class="profile-form-cont-input"
+        />
+      </div>
+      <div class="profile-form-gender-cont">
+        <p
+          [ngClass]="{
+            'profile-form-gender-cont-label-selected': gender === 'f'
+          }"
+          (click)="setGender('f')"
+          class="profile-form-gender-cont-label"
+        >
+          Kadın
+        </p>
+        <div class="profile-form-gender-cont-divider"></div>
+        <p
+          [ngClass]="{
+            'profile-form-gender-cont-label-selected': gender === 'm'
+          }"
+          (click)="setGender('m')"
+          class="profile-form-gender-cont-label"
+        >
+          Erkek
+        </p>
+      </div>
+      <div class="profile-form-btns">
+        <button type="submit" class="profile-form-btns-btn">Güncelle</button>
+        <button
+          (click)="logoutHandler()"
+          class="profile-form-btns-btn profile-form-btns-btn_danger"
+        >
+          Çıkış Yap
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-footer></app-footer>

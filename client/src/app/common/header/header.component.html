@@ -84,6 +84,7 @@
       alt="profile picture"
       class="header-user-picture"
       *ngIf="!user"
+      (click)="navigateHandler('auth/login')"
     />
   </div>
 </div>

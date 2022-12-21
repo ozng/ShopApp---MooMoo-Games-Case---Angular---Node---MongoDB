@@ -81,7 +81,10 @@
 
               <div class="budget-left-list-card-bottom-price">
                 <span class="budget-left-list-card-bottom-price-label"
-                  >{{ cartProduct.product.price | currency : " " }} TL</span
+                  >{{
+                    cartProduct.product.price | number : "1.2-2" : "tr"
+                  }}
+                  TL</span
                 >
               </div>
 
@@ -124,7 +127,7 @@
               >Ürünün Toplamı</span
             >
             <span class="budget-right-card-summary-cont-price"
-              >{{ totalProductPrice | currency : " " }} TL</span
+              >{{ totalProductPrice | number : "1.2-2" : "tr" }} TL</span
             >
           </div>
           <div class="budget-right-card-summary-cont">
@@ -132,7 +135,7 @@
               >Kargo Toplamı</span
             >
             <span class="budget-right-card-summary-cont-price"
-              >{{ transportCost | currency : " " }} TL</span
+              >{{ transportCost | number : "1.2-2" : "tr" }} TL</span
             >
           </div>
         </div>
@@ -141,7 +144,7 @@
 
         <div class="budget-right-card-summary-total">
           <span class="budget-right-card-summary-total-amount"
-            >{{ totalAmount | currency : " " }} TL</span
+            >{{ totalAmount | number : "1.2-2" : "tr" }} TL</span
           >
         </div>
       </div>

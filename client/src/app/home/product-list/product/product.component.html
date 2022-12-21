@@ -8,7 +8,9 @@
     <p class="product-list-list-wrapper-card-title">
       {{ product.title }}
     </p>
-    <p class="product-list-list-wrapper-card-price">${{ product.price }}</p>
+    <p class="product-list-list-wrapper-card-price">
+      ₺{{ product.price | number : "1.2-2" : "tr" }}
+    </p>
     <p class="product-list-list-wrapper-card-overview">
       {{ product.overview }}
     </p>

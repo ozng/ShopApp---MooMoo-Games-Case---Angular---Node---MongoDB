@@ -7,8 +7,8 @@
     <div class="profile-imgCont">
       <img src="{{ user.imageUrl }}" alt="" class="profile-imgCont-img" />
       <p class="profile-imgCont-date">
-        {{ user.createdAt | date : "full" : "+0200" : "tr" }} tarihinden beri
-        üye
+        {{ user.createdAt | date : "mediumDate" : "+0200" : "tr" }} tarihinden
+        beri üye
       </p>
     </div>
     <form (submit)="formSubmitHandler()" class="profile-form">

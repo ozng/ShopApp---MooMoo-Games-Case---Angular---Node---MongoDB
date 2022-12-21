@@ -24,6 +24,11 @@ import { BudgetComponent } from './budget/budget.component';
 import { MobilecardComponent } from './budget/mobilecard/mobilecard.component';
 import { ProfileComponent } from './profile/profile.component';
 
+import localeTr from '@angular/common/locales/tr';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localeTr, 'tr');
+
 @NgModule({
   declarations: [
     AppComponent,

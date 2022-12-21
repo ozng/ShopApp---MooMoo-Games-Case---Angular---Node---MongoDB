@@ -20,7 +20,7 @@
 
       <div class="detail-right-rateandprice">
         <p class="detail-right-rateandprice-price">
-          {{ selectedProduct.price | currency : "₺" }}
+          {{ selectedProduct.price | number : "1.2-2" : "tr" }}
           <span class="detail-right-rateandprice-tl"></span>
         </p>
         <div class="detail-right-rateandprice-ratecont">
@@ -55,7 +55,7 @@
                 {{ color.name | titlecase }}
               </p>
               <p class="detail-right-color-card-info-price">
-                {{ color.price | currency : "₺" }}
+                {{ color.price | number : "1.2-2" : "tr" }}
               </p>
             </div>
           </div>

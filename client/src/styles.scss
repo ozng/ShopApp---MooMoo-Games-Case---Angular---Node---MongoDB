@@ -10,6 +10,24 @@ html {
   font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
 }
 
+@media screen and (max-width: 1500px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  html {
+    font-size: 35%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 30%;
+  }
+}
+
 body {
   box-sizing: border-box;
 }
@@ -22,6 +40,14 @@ body {
   width: 147rem;
   max-width: 147rem;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 850px) {
+  .container {
+    width: inherit;
+    max-width: inherit;
+    margin: 0;
+  }
 }
 
 input[type="checkbox"] {

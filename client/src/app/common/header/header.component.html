@@ -68,12 +68,7 @@
     <button *ngIf="!user" routerLink="/auth/login" class="header-user-signin">
       Sign in
     </button>
-    <button
-      (click)="navigateHandler('favorite')"
-      *ngIf="user"
-      routerLink="/auth/login"
-      class="header-user-signin"
-    >
+    <button *ngIf="user" routerLink="/favorite" class="header-user-signin">
       Favorites
     </button>
     <button (click)="navigateHandler('cart')" class="header-user-cart">
@@ -94,5 +89,31 @@
       *ngIf="!user"
       (click)="navigateHandler('auth/login')"
     />
+
+    <div class="header-user-menu">
+      <i
+        (click)="toggleMenu()"
+        class="fa fa-bars header-user-menu-icon"
+        aria-hidden="true"
+      ></i>
+    </div>
+  </div>
+
+  <div
+    class="header-menu-hide"
+    [ngClass]="{ 'header-menu': isMenuOpen }"
+    *ngIf="isMenuOpen"
+  >
+    <p *ngIf="!user" routerLink="/auth/register" class="header-menu-label">
+      Register
+    </p>
+    <p *ngIf="!user" routerLink="/auth/login" class="header-menu-label">
+      Sign in
+    </p>
+    <p class="header-menu-label" *ngIf="user" routerLink="/favorite">
+      Favorites
+    </p>
+    <p class="header-menu-label" *ngIf="user" routerLink="/profile">Profile</p>
+    <p class="header-menu-label" routerLink="/cart">Cart</p>
   </div>
 </div>

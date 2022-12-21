@@ -38,6 +38,20 @@
         ></i>
         Watch
       </button>
+
+      <button
+        (click)="toggleFavorite()"
+        class="product-list-list-wrapper-card-rate-favorite-mobile"
+      >
+        <i
+          [ngClass]="{
+            'fa-heart-o': !isFavorite,
+            'fa-heart': isFavorite
+          }"
+          class="fa fa-heart product-list-list-wrapper-card-rate-favorite-mobile-icon"
+          aria-hidden="true"
+        ></i>
+      </button>
     </div>
   </a>
 </div>

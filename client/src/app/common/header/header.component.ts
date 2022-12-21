@@ -14,6 +14,12 @@ export class HeaderComponent implements OnInit {
 
   user?: any;
 
+  isMenuOpen: boolean = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
   constructor(private router: Router, private authService: AuthService) {}
 
   resetSearchInput() {

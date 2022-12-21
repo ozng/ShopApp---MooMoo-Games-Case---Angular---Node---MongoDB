@@ -12,3 +12,17 @@
     margin-left: 5.1rem;
   }
 }
+
+@media screen and (max-width: 850px) {
+  .home-product {
+    flex-direction: column;
+    &-try {
+      width: 100%;
+    }
+
+    &-product {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}

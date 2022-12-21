@@ -28,6 +28,9 @@
             <p class="detail-right-rateandprice-ratecont-rate-num">
               {{ selectedProduct.rating }}
             </p>
+            <div class="detail-right-rateandprice-ratecont-rate-rate">
+              <app-rate [rate]="selectedProduct.rating"></app-rate>
+            </div>
           </div>
           <p class="detail-right-rateandprice-ratecont-comment">
             300 Değerlendirme

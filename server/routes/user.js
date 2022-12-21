@@ -2,6 +2,7 @@ const router = require("express").Router();
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const Product = require("../models/Product");
 
 // Register
 router.post("/register", async (req, res) => {
@@ -63,6 +64,31 @@ router.post("/login", async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
+  }
+});
+
+// Add favorite
+
+router.put("/favorite/:userID/:productID", async (req, res) => {
+  const userID = req.params.userID;
+  const productID = req.params.productID;
+
+  try {
+    const user = await User.findById(userID);
+
+    const isInclude = user.favorites.includes(productID);
+
+    if (!isInclude) {
+      await user.updateOne({ $push: { favorites: productID } });
+      res.status(200).json("This product added to your favorite");
+    } else {
+      await user.updateOne({ $pull: { favorites: productID } });
+      res.status(200).json("This product removed from your favorite");
+    }
+  } catch (err) {
+    res
+      .status(500)
+      .json({ message: "Something went wrong.", error: err.message });
   }
 });
 

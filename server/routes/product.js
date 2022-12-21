@@ -82,6 +82,4 @@ router.get("/search/:text", async (req, res) => {
   }
 });
 
-//
-
 module.exports = router;

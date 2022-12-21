@@ -21,6 +21,10 @@ const UserSchema = new mongoose.Schema(
         "https://images.pexels.com/photos/428364/pexels-photo-428364.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     token: String,
+    favorites: {
+      type: Array,
+      default: [],
+    },
   },
   { timestamps: true }
 );

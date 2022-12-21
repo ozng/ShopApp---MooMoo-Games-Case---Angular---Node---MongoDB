@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -21,17 +20,12 @@ export class HeaderComponent implements OnInit {
     this.searchText = '';
   }
 
-  navigateHandler() {
-    this.router.navigate(['cart']);
+  navigateHandler(route: string) {
+    this.router.navigate([route]);
   }
 
   searchHandler() {
-    this.router.navigate([`search/${this.searchText}`]);
-  }
-
-  logoutHandler() {
-    this.authService.deleteUserFromLS();
-    this.router.navigate(['auth/login']);
+    this.navigateHandler(`search/${this.searchText}`);
   }
 
   ngOnInit(): void {

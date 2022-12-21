@@ -22,6 +22,7 @@ import { ProductComponent } from './home/product-list/product/product.component'
 import { RouterModule } from '@angular/router';
 import { BudgetComponent } from './budget/budget.component';
 import { MobilecardComponent } from './budget/mobilecard/mobilecard.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MobilecardComponent } from './budget/mobilecard/mobilecard.component';
     ProductComponent,
     BudgetComponent,
     MobilecardComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

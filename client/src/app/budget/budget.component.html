@@ -46,7 +46,10 @@
                   <span class="budget-left-list-card-bottom-labels-infos-saller"
                     >Hepsişurada</span
                   >
-                  <span class="budget-left-list-card-bottom-labels-infos-name">
+                  <span
+                    (click)="navigateHandler(cartProduct.product._id)"
+                    class="budget-left-list-card-bottom-labels-infos-name"
+                  >
                     {{ cartProduct.product.title }}
                   </span>
                 </div>

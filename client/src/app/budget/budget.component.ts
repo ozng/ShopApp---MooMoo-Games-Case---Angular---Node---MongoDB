@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-budget',
@@ -11,6 +12,12 @@ export class BudgetComponent implements OnInit {
   totalProductPrice: number = 0;
   transportCost: number = 0;
   totalAmount: number = 0;
+
+  constructor(private route: Router) {}
+
+  navigateHandler(productID: string) {
+    this.route.navigate([`detail/${productID}`]);
+  }
 
   reCalculateTotalAmount() {
     this.totalProductPrice = 0;

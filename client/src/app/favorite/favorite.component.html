@@ -1,0 +1,18 @@
+<app-header></app-header>
+
+<div class="container">
+  <app-top-category-bar></app-top-category-bar>
+  <div class="favorite">
+    <h1 *ngIf="favoriteProducts" class="favorite-title">
+      Favori Ürünlerim ( {{ favoriteProducts.length }} ürün )
+    </h1>
+    <div class="favorite-list">
+      <ng-container *ngFor="let product of favoriteProducts">
+        <div class="favorite-list-wrapper">
+          <app-product [product]="product"></app-product>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

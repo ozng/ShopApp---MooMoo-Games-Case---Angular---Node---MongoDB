@@ -68,6 +68,14 @@
     <button *ngIf="!user" routerLink="/auth/login" class="header-user-signin">
       Sign in
     </button>
+    <button
+      (click)="navigateHandler('favorite')"
+      *ngIf="user"
+      routerLink="/auth/login"
+      class="header-user-signin"
+    >
+      Favorites
+    </button>
     <button (click)="navigateHandler('cart')" class="header-user-cart">
       My cart
       <span class="header-user-cart-badge">{{ cartProductLength }}</span>

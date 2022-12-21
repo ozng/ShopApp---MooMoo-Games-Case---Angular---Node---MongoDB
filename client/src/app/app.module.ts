@@ -26,6 +26,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 import localeTr from '@angular/common/locales/tr';
 import { registerLocaleData } from '@angular/common';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 registerLocaleData(localeTr, 'tr');
 
@@ -47,6 +48,7 @@ registerLocaleData(localeTr, 'tr');
     BudgetComponent,
     MobilecardComponent,
     ProfileComponent,
+    FavoriteComponent,
   ],
   imports: [
     BrowserModule,

@@ -73,7 +73,9 @@
     </button>
     <button (click)="navigateHandler('cart')" class="header-user-cart">
       My cart
-      <span class="header-user-cart-badge">{{ cartProductLength }}</span>
+      <span *ngIf="cartProductLength > 0" class="header-user-cart-badge">{{
+        cartProductLength
+      }}</span>
     </button>
     <img
       src="{{ user.imageUrl }}"

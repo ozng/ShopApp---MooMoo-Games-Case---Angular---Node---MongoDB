@@ -140,7 +140,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .budget {
     display: flex;
     flex-direction: column;
@@ -163,6 +163,30 @@
       width: 80%;
       max-width: 80%;
       min-width: 80%;
+
+      &-card {
+        &-title {
+          font-size: 2.5rem;
+        }
+
+        &-summary {
+          &-total {
+            &-amount {
+              font-size: 2.3rem;
+            }
+          }
+
+          &-cont {
+            &-label {
+              font-size: 2rem;
+            }
+
+            &-price {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
     }
   }
 }

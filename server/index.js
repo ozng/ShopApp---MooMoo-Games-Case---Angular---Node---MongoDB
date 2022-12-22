@@ -33,6 +33,6 @@ app.use("/api/product", productRoute);
 app.use("/api/user", userRoute);
 app.use("/api/order", orderRoute);
 
-app.listen(PORT | 5000, () => {
+app.listen(PORT || 5000, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });

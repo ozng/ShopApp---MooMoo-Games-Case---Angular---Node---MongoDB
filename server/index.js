@@ -10,7 +10,7 @@ const orderRoute = require("./routes/order.js");
 
 const app = express();
 
-const PORT = 8800;
+const PORT = process.env.PORT;
 
 app.use(cors());
 
@@ -33,6 +33,6 @@ app.use("/api/product", productRoute);
 app.use("/api/user", userRoute);
 app.use("/api/order", orderRoute);
 
-app.listen(PORT, () => {
+app.listen(PORT | 5000, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });

@@ -68,6 +68,7 @@ _Arama input'una göre uygun ürünlerin listelendiği ekran._
 <li> Aranan anahtar kelime URL sonunda parametre ile yakalanarak sunucuya istek atılır. </li>
 <li> İsteğe uygun ürünler listelenir. </li>
 </ol>
+
 ### Product Cart Comp.
 
 _Ürünle ilgili bilgiler içeren kart._

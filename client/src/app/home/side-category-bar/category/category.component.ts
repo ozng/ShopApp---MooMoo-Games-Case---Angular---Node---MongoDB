@@ -11,7 +11,7 @@ interface Category {
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
-  styleUrls: ['./category.component.scss'],
+  styleUrls: ['./category.component.scss', './category.component.media.scss'],
 })
 export class CategoryComponent {
   @Input() category: Category[] = [];

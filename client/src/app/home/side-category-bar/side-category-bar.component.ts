@@ -24,7 +24,10 @@ interface Categories {
 @Component({
   selector: 'app-side-category-bar',
   templateUrl: './side-category-bar.component.html',
-  styleUrls: ['./side-category-bar.component.scss'],
+  styleUrls: [
+    './side-category-bar.component.scss',
+    './side-category-bar.component.media.scss',
+  ],
 })
 export class SideCategoryBarComponent {
   constructor(private store: Store, private productService: ProductService) {}

@@ -8,7 +8,7 @@ import { search } from '../store/products/product.actions';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss'],
+  styleUrls: ['./search.component.scss', './search.component.media.scss'],
 })
 export class SearchComponent implements OnInit {
   public allProduct$ = this.store.select(selectAllProducts);

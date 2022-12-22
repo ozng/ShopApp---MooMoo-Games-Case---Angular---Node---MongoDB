@@ -7,7 +7,10 @@ interface Categories {
 @Component({
   selector: 'app-top-category-bar',
   templateUrl: './top-category-bar.component.html',
-  styleUrls: ['./top-category-bar.component.scss'],
+  styleUrls: [
+    './top-category-bar.component.scss',
+    './top-category-bar.component.media.scss',
+  ],
 })
 export class TopCategoryBarComponent {
   selectedCategoryID: number = 1;

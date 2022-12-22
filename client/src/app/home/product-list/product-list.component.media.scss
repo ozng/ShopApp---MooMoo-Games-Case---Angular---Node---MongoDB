@@ -1,0 +1,41 @@
+@media screen and (max-width: 850px) {
+  .product-list {
+    &-topmenu {
+      &-dropdown {
+        display: none;
+      }
+
+      &-tabbar {
+        &-margin {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .product-list {
+    &-mid {
+      display: none;
+    }
+
+    &-list {
+      gap: 3rem;
+      &-wrapper {
+        flex: 0 0 31%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .product-list {
+    &-list {
+      gap: 3rem;
+      &-wrapper {
+        flex: 0 0 30%;
+      }
+    }
+  }
+}

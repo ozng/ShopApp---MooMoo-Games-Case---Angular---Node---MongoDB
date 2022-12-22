@@ -5,7 +5,7 @@ import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.scss'],
+  styleUrls: ['./detail.component.scss', './detail.component.media.scss'],
 })
 export class DetailComponent implements OnInit {
   selectedProduct?: any;

@@ -1,0 +1,42 @@
+@media screen and (max-width: 850px) {
+  .detail {
+    margin: 5.6rem auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .detail {
+    &-right {
+      &-btns {
+        flex-direction: column;
+
+        &-right {
+          margin-bottom: 4.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .detail {
+    &-right {
+      &-rateandprice {
+        flex-direction: column;
+
+        &-price {
+          text-align: center;
+        }
+
+        &-ratecont {
+          align-items: center;
+          margin-top: 3.3rem;
+        }
+      }
+
+      &-saller {
+        align-self: center;
+      }
+    }
+  }
+}

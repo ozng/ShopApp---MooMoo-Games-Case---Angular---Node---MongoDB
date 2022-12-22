@@ -7,7 +7,7 @@ import { selectAllProducts } from '../store/products/product.selectors';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  styleUrls: ['./home.component.scss', './home.component.media.scss'],
 })
 export class HomeComponent implements OnInit {
   public allProduct$ = this.store.select(selectAllProducts);

@@ -5,7 +5,7 @@ import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss'],
+  styleUrls: ['./profile.component.scss', './profile.component.media.scss'],
 })
 export class ProfileComponent implements OnInit {
   constructor(private authService: AuthService, private route: Router) {}

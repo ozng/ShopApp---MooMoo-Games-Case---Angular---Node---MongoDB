@@ -21,17 +21,3 @@
     }
   }
 }
-
-@media screen and (max-width: 850px) {
-  .category-bar {
-    &-categories {
-      &-card {
-        &-wrapper {
-          &-icon {
-            display: none;
-          }
-        }
-      }
-    }
-  }
-}

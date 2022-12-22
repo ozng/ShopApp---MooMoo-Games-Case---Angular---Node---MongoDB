@@ -5,7 +5,7 @@ import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.scss'],
+  styleUrls: ['./auth.component.scss', './auth.component.media.scss'],
 })
 export class AuthComponent implements OnInit {
   isLoginIn = true;

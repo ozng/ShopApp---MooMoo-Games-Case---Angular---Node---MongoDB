@@ -104,6 +104,151 @@
           </div>
         </ng-container>
       </div>
+      <!-- Tablet Card  -->
+      <div class="budget-left-tablet">
+        <ng-container *ngFor="let cartProduct of cartList">
+          <div class="budget-left-tablet-card">
+            <div class="budget-left-tablet-card-imgCont">
+              <img
+                src="{{ cartProduct.product.imageUrl }}"
+                alt="product image"
+                class="budget-left-tablet-card-imgCont-img"
+              />
+              <div class="budget-left-tablet-card-imgCont-btns">
+                <div
+                  (click)="quantityChangeHandler(cartProduct.product._id, 'i')"
+                  class="budget-left-tablet-card-imgCont-btns-inc"
+                >
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </div>
+                <span class="budget-left-tablet-card-imgCont-btns-quantity">{{
+                  cartProduct.quantity
+                }}</span>
+                <div
+                  (click)="quantityChangeHandler(cartProduct.product._id, '')"
+                  class="budget-left-tablet-card-imgCont-btns-dec"
+                >
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="budget-left-tablet-card-labelCont">
+              <div class="budget-left-tablet-card-labelCont-rateCont">
+                <div class="budget-left-tablet-card-labelCont-rateCont-rate">
+                  <app-rate [rate]="cartProduct.product.rating"></app-rate>
+                  <span
+                    class="budget-left-tablet-card-labelCont-rateCont-rate-label"
+                    >{{ cartProduct.product.rating }}</span
+                  >
+                </div>
+
+                <div class="budget-left-tablet-card-labelCont-rateCont-price">
+                  <p
+                    class="budget-left-tablet-card-labelCont-rateCont-price-label"
+                  >
+                    ₺{{ cartProduct.product.price | number : "1.2-2" : "tr" }}
+                  </p>
+                </div>
+              </div>
+
+              <p
+                (click)="navigateHandler(cartProduct.product._id)"
+                class="budget-left-tablet-card-labelCont-title"
+              >
+                {{ cartProduct.product.title }}
+              </p>
+
+              <div class="budget-left-tablet-card-labelCont-btns">
+                <button
+                  (click)="deleteFromCartHandler(cartProduct.product._id)"
+                  class="budget-left-tablet-card-labelCont-btns-remove"
+                >
+                  Remove
+                </button>
+                <div class="budget-left-tablet-card-labelCont-btns-save">
+                  <i
+                    class="fa fa-bookmark-o budget-left-tablet-card-labelCont-btns-save-icon"
+                    aria-hidden="true"
+                  ></i>
+
+                  <button
+                    class="budget-left-tablet-card-labelCont-btns-save-later"
+                  >
+                    Save For Later
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <!-- Mobile Card -->
+
+      <div class="budget-left-mobile">
+        <ng-container *ngFor="let cartProduct of cartList">
+          <div class="budget-left-mobile-card">
+            <div class="budget-left-mobile-card-imgCont">
+              <img
+                src="{{ cartProduct.product.imageUrl }}"
+                alt="product image"
+                class="budget-left-mobile-card-imgCont-img"
+              />
+              <div class="budget-left-mobile-card-imgCont-btns">
+                <div
+                  (click)="quantityChangeHandler(cartProduct.product._id, 'i')"
+                  class="budget-left-mobile-card-imgCont-btns-inc"
+                >
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </div>
+                <span class="budget-left-mobile-card-imgCont-btns-quantity">{{
+                  cartProduct.quantity
+                }}</span>
+                <div
+                  (click)="quantityChangeHandler(cartProduct.product._id, '')"
+                  class="budget-left-mobile-card-imgCont-btns-dec"
+                >
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="budget-left-mobile-card-labelCont">
+              <p
+                (click)="navigateHandler(cartProduct.product._id)"
+                class="budget-left-mobile-card-labelCont-title"
+              >
+                {{ cartProduct.product.title }}
+              </p>
+
+              <div class="budget-left-mobile-card-labelCont-rateCont">
+                <div class="budget-left-mobile-card-labelCont-rateCont-rate">
+                  <app-rate [rate]="cartProduct.product.rating"></app-rate>
+                  <span
+                    class="budget-left-mobile-card-labelCont-rateCont-rate-label"
+                    >{{ cartProduct.product.rating }}</span
+                  >
+                </div>
+
+                <div class="budget-left-mobile-card-labelCont-rateCont-price">
+                  <button
+                    (click)="deleteFromCartHandler(cartProduct.product._id)"
+                    class="budget-left-mobile-card-labelCont-rateCont-price-remove"
+                  >
+                    Remove
+                  </button>
+                  <p
+                    class="budget-left-mobile-card-labelCont-rateCont-price-label"
+                  >
+                    ₺{{ cartProduct.product.price | number : "1.2-2" : "tr" }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
 
       <div class="budget-left-recommended">
         <h2 class="budget-left-recommended-title">Önerilen Ürünler</h2>

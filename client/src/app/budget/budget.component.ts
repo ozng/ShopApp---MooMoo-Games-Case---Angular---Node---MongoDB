@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-budget',
   templateUrl: './budget.component.html',
-  styleUrls: ['./budget.component.scss'],
+  styleUrls: ['./budget.component.scss', './budget.component.media.scss'],
 })
 export class BudgetComponent implements OnInit {
   cartList: any = [];

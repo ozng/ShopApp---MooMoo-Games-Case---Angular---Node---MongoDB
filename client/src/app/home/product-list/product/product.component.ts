@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -10,7 +11,11 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductComponent implements OnInit {
   @Input() product: any;
 
-  constructor(private router: Router, private productService: ProductService) {}
+  constructor(
+    private router: Router,
+    private productService: ProductService,
+    private authService: AuthService
+  ) {}
 
   navigateToDetailHandler() {
     this.router.navigate([`/detail/${this.product._id}`]);
@@ -19,18 +24,30 @@ export class ProductComponent implements OnInit {
   isFavorite?: any;
 
   toggleFavorite() {
-    this.productService.addRemoveFavorite(this.product._id).subscribe({
-      next: () => {
-        this.isFavorite = !this.isFavorite;
-      },
-    });
+    const user = this.authService.getUser();
+
+    if (user) {
+      this.productService.addRemoveFavorite(this.product._id).subscribe({
+        next: () => {
+          this.isFavorite = !this.isFavorite;
+        },
+      });
+    } else {
+      this.router.navigate(['auth/login']);
+    }
   }
 
   ngOnInit(): void {
-    this.productService.isFavorite(this.product._id).subscribe({
-      next: (response) => {
-        this.isFavorite = response;
-      },
-    });
+    const user = this.authService.getUser();
+
+    if (user) {
+      this.productService.isFavorite(this.product?._id).subscribe({
+        next: (response: any) => {
+          this.isFavorite = response;
+        },
+      });
+    } else {
+      this.isFavorite = false;
+    }
   }
 }

@@ -53,10 +53,14 @@ export class ProductService {
     );
   }
 
-  isFavorite(productID: string): Observable<any> {
+  isFavorite(productID: string): any {
     const user = this.userService.getUser();
 
     const userID = user._id;
+
+    if (!user) {
+      return false;
+    }
 
     return this.http.get<any>(
       `${environment.apiUrl}/user/is_favorite/${userID}/${productID}`

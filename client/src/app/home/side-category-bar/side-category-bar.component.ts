@@ -94,35 +94,35 @@ export class SideCategoryBarComponent {
   sideFilters = [
     {
       id: 2,
-      label: 'Recently Added',
+      label: 'En Son Eklenen',
     },
     {
       id: 3,
-      label: 'Expiring Soon',
+      label: 'Kalan Stok',
     },
     {
       id: 4,
-      label: 'Most Rated',
+      label: 'En Yüksek Oy',
     },
     {
       id: 5,
-      label: 'Price: Low to High',
+      label: 'Fiyat: Düşükten Yükseğe',
     },
     {
       id: 6,
-      label: 'Price: High to Low',
+      label: 'Fiyat: Yüksekten Düşüğe',
     },
   ];
 
   categories: Categories[] = [
     {
       id: 1,
-      name: 'Cell Phones & Smartphones',
+      name: 'Cep Telefonu & Akıllı Telefonlar',
       isShow: false,
       category: [
         {
           id: 'p1',
-          name: 'Smartphone',
+          name: 'Akıllı Telefonlar',
         },
         {
           id: 'p2',
@@ -132,69 +132,69 @@ export class SideCategoryBarComponent {
     },
     {
       id: 2,
-      name: 'Pcs & Laptops',
+      name: 'PC & Laptoplar',
       isShow: false,
       category: [
         {
           id: 'l1',
-          name: 'Personel Computer',
+          name: 'Kişisel Bilgisayarlar',
         },
         {
           id: 'l2',
-          name: 'Laptop',
+          name: 'Laptoplar',
         },
         {
           id: 'l3',
-          name: 'Hardware',
+          name: 'Donanım',
         },
       ],
     },
     {
       id: 3,
-      name: 'Televisions',
+      name: 'Televizyonlar',
       isShow: false,
       category: [
         {
           id: 't1',
-          name: 'Television',
+          name: 'Televizyonlar',
         },
         {
           id: 't2',
-          name: 'Projection',
+          name: 'Projeksiyonlar',
         },
       ],
     },
     {
       id: 4,
-      name: 'Cameras',
+      name: 'Kameralar',
       isShow: false,
       category: [
         {
           id: 'c1',
-          name: 'Camera',
+          name: 'Kameralar',
         },
         {
           id: 'c2',
-          name: 'Accessory',
+          name: 'Kamera Aksesuarları',
         },
       ],
     },
     {
       id: 5,
-      name: 'Accessory',
+      name: 'Aksesuarlar',
       isShow: false,
       category: [
         {
           id: 'a1',
-          name: 'Headphone',
+          name: 'Kulaklıklar',
         },
         {
           id: 'a2',
-          name: 'Battery',
+          name: 'Bataryalar',
         },
         {
           id: 'a3',
-          name: 'Phone Cases',
+          name: 'Telefon Kılıfları',
         },
       ],
     },

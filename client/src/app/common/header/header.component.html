@@ -32,9 +32,9 @@
         </defs>
       </svg>
     </a>
-    <p class="header-logo-sell">Sell on Shopka</p>
+    <p class="header-logo-sell">Satış Yap</p>
     <p *ngIf="!user" routerLink="/auth/register" class="header-logo-register">
-      Register
+      Kayıt Ol
     </p>
   </div>
 
@@ -66,13 +66,13 @@
 
   <div class="header-user">
     <button *ngIf="!user" routerLink="/auth/login" class="header-user-signin">
-      Sign in
+      Giriş Yap
     </button>
     <button *ngIf="user" routerLink="/favorite" class="header-user-signin">
-      Favorites
+      Favoriler
     </button>
     <button (click)="navigateHandler('cart')" class="header-user-cart">
-      My cart
+      Sepetim
       <span *ngIf="cartProductLength > 0" class="header-user-cart-badge">{{
         cartProductLength
       }}</span>
@@ -107,15 +107,15 @@
     *ngIf="isMenuOpen"
   >
     <p *ngIf="!user" routerLink="/auth/register" class="header-menu-label">
-      Register
+      Kayıt ol
     </p>
     <p *ngIf="!user" routerLink="/auth/login" class="header-menu-label">
-      Sign in
+      Giriş yap
     </p>
     <p class="header-menu-label" *ngIf="user" routerLink="/favorite">
-      Favorites
+      Favoriler
     </p>
-    <p class="header-menu-label" *ngIf="user" routerLink="/profile">Profile</p>
-    <p class="header-menu-label" routerLink="/cart">Cart</p>
+    <p class="header-menu-label" *ngIf="user" routerLink="/profile">Profil</p>
+    <p class="header-menu-label" routerLink="/cart">Sepet</p>
   </div>
 </div>

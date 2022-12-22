@@ -19,62 +19,62 @@ export class TopCategoryBarComponent {
     {
       id: 1,
       icon: 'checkroom',
-      label: 'Clothing & Shoes',
+      label: 'Kıyafet & Ayakkabı',
     },
     {
       id: 2,
       icon: 'theaters',
-      label: 'Entertainment',
+      label: 'Eğlence',
     },
     {
       id: 3,
       icon: 'music_note',
-      label: 'Music',
+      label: 'Müzik',
     },
     {
       id: 4,
       icon: 'fitness_center',
-      label: 'Sport & Lifestyle',
+      label: 'Spor & Yaşam',
     },
     {
       id: 5,
       icon: 'pets',
-      label: 'Pets',
+      label: 'Evcil Hayvanlar',
     },
     {
       id: 6,
       icon: 'soup_kitchen',
-      label: 'Kitchen Accessories',
+      label: 'Mutfak',
     },
     {
       id: 7,
       icon: 'luggage',
-      label: 'Travel Equipment',
+      label: 'Gezi',
     },
     {
       id: 8,
       icon: 'psychiatry',
-      label: 'Growing & Garden',
+      label: 'Bahçe',
     },
     {
       id: 9,
       icon: 'power',
-      label: 'Electrical Tools',
+      label: 'Elektrikli Aletler',
     },
     {
       id: 10,
       icon: 'baby_changing_station',
-      label: 'Mother Care',
+      label: 'Annelere Özel',
     },
     {
       id: 11,
       icon: 'toys',
-      label: 'Toys & Entertainment',
+      label: 'Oyuncak & Eğlence',
     },
     {
       id: 12,
       icon: 'filter_vintage',
-      label: 'Vintage',
+      label: 'Nostaljik',
     },
   ];
 

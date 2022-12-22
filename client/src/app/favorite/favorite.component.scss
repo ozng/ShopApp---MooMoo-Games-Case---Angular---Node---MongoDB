@@ -10,12 +10,46 @@
 
   &-list {
     display: flex;
+    justify-self: center;
+
     gap: 2rem;
     flex-wrap: wrap;
     padding: 3.3rem 1.5rem;
 
     &-wrapper {
       width: 16%;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .favorite {
+    &-list {
+      &-wrapper {
+        flex: 0 0 20%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .favorite {
+    margin: 0 auto;
+    &-list {
+      &-wrapper {
+        flex: 0 0 30%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .favorite {
+    margin: 0 auto;
+    &-list {
+      &-wrapper {
+        flex: 0 0 45%;
+      }
     }
   }
 }

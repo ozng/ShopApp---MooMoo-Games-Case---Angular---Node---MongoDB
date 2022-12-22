@@ -58,6 +58,16 @@ _Ekran ilk yenilendiğinde tüm ürünler 4 numaralı alanda gösterilir._
 <li> Ürünlerin gösterileceği alan. </li>
 </ol>
 
+### Search
+
+_Arama input'una göre uygun ürünlerin listelendiği ekran._
+
+![search](https://user-images.githubusercontent.com/93818025/209192435-f056cca7-75cf-457f-9d50-d7326e775470.jpg)
+
+<ol>
+<li> Aranan anahtar kelime URL sonunda parametre ile yakalanarak sunucuya istek atılır. </li>
+<li> İsteğe uygun ürünler listelenir. </li>
+</ol>
 ### Product Cart Comp.
 
 _Ürünle ilgili bilgiler içeren kart._

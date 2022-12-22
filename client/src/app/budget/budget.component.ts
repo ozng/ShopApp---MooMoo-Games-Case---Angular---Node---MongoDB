@@ -77,8 +77,6 @@ export class BudgetComponent implements OnInit {
     localStorage.setItem('cart', jsonData);
 
     this.reCalculateTotalAmount();
-
-    window.location.reload();
   }
 
   ngOnInit(): void {

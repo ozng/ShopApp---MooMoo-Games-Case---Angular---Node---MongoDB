@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -8,6 +8,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.scss', './header.component.media.scss'],
 })
 export class HeaderComponent implements OnInit {
+  @Input() cartLength: any;
+
   searchText?: string;
 
   cartProductLength?: any;
